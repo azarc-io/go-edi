@@ -1,0 +1,2181 @@
+{
+  "type": "object",
+  "title": "contrl-full",
+  "properties": {
+    "groupResponseItems": {
+      "type": "array",
+      "title": "groupResponseItems",
+      "description": "GRP3 - Segment Group 3.",
+      "x-edi": {
+        "order": 5
+      },
+      "minItems": 0,
+      "maxItems": 999999,
+      "items": {
+        "type": "object",
+        "x-edi": {
+          "type": "group",
+          "order": 5,
+          "tag": "GRP3"
+        },
+        "properties": {
+          "groupResponses": {
+            "type": "object",
+            "title": "Group responses",
+            "description": "Group responses.",
+            "x-edi": {
+              "type": "segment",
+              "order": 1,
+              "tag": "UCF"
+            },
+            "properties": {
+              "actionCoded": {
+                "description": "Action coded.",
+                "maxLength": 3,
+                "propertyName": "actionCoded",
+                "title": "Action coded",
+                "type": "string",
+                "x-edi": {
+                  "type": "element",
+                  "order": 4,
+                  "ref": "0083"
+                }
+              },
+              "applicationRecipientIdentification": {
+                "type": "object",
+                "title": "APPLICATION RECIPIENT IDENTIFICATION",
+                "description": "APPLICATION RECIPIENT IDENTIFICATION.",
+                "x-edi": {
+                  "type": "component",
+                  "order": 3,
+                  "ref": "S007"
+                },
+                "properties": {
+                  "applicationRecipientIdentification": {
+                    "description": "Application recipient identification.",
+                    "maxLength": 35,
+                    "propertyName": "applicationRecipientIdentification",
+                    "title": "Application recipient identification",
+                    "type": "string",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 1,
+                      "ref": "0044"
+                    }
+                  },
+                  "identificationCodeQualifier": {
+                    "description": "Identification code qualifier.",
+                    "maxLength": 4,
+                    "propertyName": "identificationCodeQualifier",
+                    "title": "Identification code qualifier",
+                    "type": "string",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 2,
+                      "ref": "0007"
+                    }
+                  }
+                }
+              },
+              "applicationSenderIdentification": {
+                "type": "object",
+                "title": "APPLICATION SENDER IDENTIFICATION",
+                "description": "APPLICATION SENDER IDENTIFICATION.",
+                "x-edi": {
+                  "type": "component",
+                  "order": 2,
+                  "ref": "S006"
+                },
+                "properties": {
+                  "applicationSenderIdentification": {
+                    "description": "Application sender identification.",
+                    "maxLength": 35,
+                    "propertyName": "applicationSenderIdentification",
+                    "title": "Application sender identification",
+                    "type": "string",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 1,
+                      "ref": "0040"
+                    }
+                  },
+                  "identificationCodeQualifier": {
+                    "description": "Identification code qualifier.",
+                    "maxLength": 4,
+                    "propertyName": "identificationCodeQualifier",
+                    "title": "Identification code qualifier",
+                    "type": "string",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 2,
+                      "ref": "0007"
+                    }
+                  }
+                }
+              },
+              "dataElementIdentification": {
+                "type": "object",
+                "title": "DATA ELEMENT IDENTIFICATION",
+                "description": "DATA ELEMENT IDENTIFICATION.",
+                "x-edi": {
+                  "type": "component",
+                  "order": 7,
+                  "ref": "S011"
+                },
+                "properties": {
+                  "erroneousComponentDataElementPosition": {
+                    "description": "Erroneous component data element position.",
+                    "max": 999,
+                    "propertyName": "erroneousComponentDataElementPosition",
+                    "title": "Erroneous component data element position",
+                    "type": "number",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 2,
+                      "ref": "0104"
+                    }
+                  },
+                  "erroneousDataElementOccurrence": {
+                    "description": "Erroneous data element occurrence.",
+                    "max": 999999,
+                    "propertyName": "erroneousDataElementOccurrence",
+                    "title": "Erroneous data element occurrence",
+                    "type": "number",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 3,
+                      "ref": "0136"
+                    }
+                  },
+                  "erroneousDataElementPositionInSegment": {
+                    "description": "Erroneous data element position in segment.",
+                    "max": 999,
+                    "propertyName": "erroneousDataElementPositionInSegment",
+                    "title": "Erroneous data element position in segment",
+                    "type": "number",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 1,
+                      "ref": "0098"
+                    }
+                  }
+                }
+              },
+              "groupReferenceNumber": {
+                "description": "Group reference number.",
+                "max": 99999999999999,
+                "propertyName": "groupReferenceNumber",
+                "title": "Group reference number",
+                "type": "number",
+                "x-edi": {
+                  "type": "element",
+                  "order": 1,
+                  "ref": "0048"
+                }
+              },
+              "securityReferenceNumber": {
+                "description": "Security reference number.",
+                "maxLength": 14,
+                "propertyName": "securityReferenceNumber",
+                "title": "Security reference number",
+                "type": "string",
+                "x-edi": {
+                  "type": "element",
+                  "order": 8,
+                  "ref": "0534"
+                }
+              },
+              "securitySegmentPosition": {
+                "description": "Security segment position.",
+                "maxLength": 6,
+                "propertyName": "securitySegmentPosition",
+                "title": "Security segment position",
+                "type": "string",
+                "x-edi": {
+                  "type": "element",
+                  "order": 9,
+                  "ref": "0138"
+                }
+              },
+              "serviceSegmentTagCoded": {
+                "description": "Service segment tag, coded.",
+                "maxLength": 3,
+                "propertyName": "serviceSegmentTagCoded",
+                "title": "Service segment tag coded",
+                "type": "string",
+                "x-edi": {
+                  "type": "element",
+                  "order": 6,
+                  "ref": "0135"
+                }
+              },
+              "syntaxErrorCoded": {
+                "description": "Syntax error coded.",
+                "maxLength": 3,
+                "propertyName": "syntaxErrorCoded",
+                "title": "Syntax error coded",
+                "type": "string",
+                "x-edi": {
+                  "type": "element",
+                  "order": 5,
+                  "ref": "0085"
+                }
+              }
+            }
+          },
+          "messageResponses": {
+            "type": "array",
+            "title": "messageResponses",
+            "description": "GRP4 - Segment Group 4.",
+            "x-edi": {
+              "order": 2
+            },
+            "minItems": 0,
+            "maxItems": 999999,
+            "items": {
+              "type": "object",
+              "x-edi": {
+                "type": "group",
+                "order": 2,
+                "tag": "GRP4"
+              },
+              "properties": {
+                "messagePackageResponse": {
+                  "type": "object",
+                  "title": "Message/package response",
+                  "description": "Message/package response.",
+                  "x-edi": {
+                    "type": "segment",
+                    "order": 1,
+                    "tag": "UCM"
+                  },
+                  "properties": {
+                    "actionCoded": {
+                      "description": "Action coded.",
+                      "maxLength": 3,
+                      "propertyName": "actionCoded",
+                      "title": "Action coded",
+                      "type": "string",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 3,
+                        "ref": "0083"
+                      }
+                    },
+                    "dataElementIdentification": {
+                      "type": "object",
+                      "title": "DATA ELEMENT IDENTIFICATION",
+                      "description": "DATA ELEMENT IDENTIFICATION.",
+                      "x-edi": {
+                        "type": "component",
+                        "order": 6,
+                        "ref": "S011"
+                      },
+                      "properties": {
+                        "erroneousComponentDataElementPosition": {
+                          "description": "Erroneous component data element position.",
+                          "max": 999,
+                          "propertyName": "erroneousComponentDataElementPosition",
+                          "title": "Erroneous component data element position",
+                          "type": "number",
+                          "x-edi": {
+                            "type": "element",
+                            "order": 2,
+                            "ref": "0104"
+                          }
+                        },
+                        "erroneousDataElementOccurrence": {
+                          "description": "Erroneous data element occurrence.",
+                          "max": 999999,
+                          "propertyName": "erroneousDataElementOccurrence",
+                          "title": "Erroneous data element occurrence",
+                          "type": "number",
+                          "x-edi": {
+                            "type": "element",
+                            "order": 3,
+                            "ref": "0136"
+                          }
+                        },
+                        "erroneousDataElementPositionInSegment": {
+                          "description": "Erroneous data element position in segment.",
+                          "max": 999,
+                          "propertyName": "erroneousDataElementPositionInSegment",
+                          "title": "Erroneous data element position in segment",
+                          "type": "number",
+                          "x-edi": {
+                            "type": "element",
+                            "order": 1,
+                            "ref": "0098"
+                          }
+                        }
+                      }
+                    },
+                    "messageIdentifier": {
+                      "type": "object",
+                      "title": "MESSAGE IDENTIFIER",
+                      "description": "Identification of the type, version, etc. of the message being interchanged. ",
+                      "x-edi": {
+                        "type": "component",
+                        "order": 2,
+                        "ref": "S009"
+                      },
+                      "properties": {
+                        "associationAssignedCode": {
+                          "description": "Code, assigned by the association responsible for the design and maintenance of the message type concerned, which further identifies the message.",
+                          "maxLength": 6,
+                          "propertyName": "associationAssignedCode",
+                          "title": "Association assigned code",
+                          "type": "string",
+                          "x-edi": {
+                            "type": "element",
+                            "order": 5,
+                            "ref": "0057"
+                          }
+                        },
+                        "codeListDirectoryVersionNumber": {
+                          "description": "Version number of the code list directory.",
+                          "maxLength": 6,
+                          "propertyName": "codeListDirectoryVersionNumber",
+                          "title": "Code list directory version number",
+                          "type": "string",
+                          "x-edi": {
+                            "type": "element",
+                            "order": 6,
+                            "ref": "0110"
+                          }
+                        },
+                        "controllingAgencyCoded": {
+                          "description": "Code identifying a controlling agency.",
+                          "maxLength": 3,
+                          "propertyName": "controllingAgencyCoded",
+                          "title": "Controlling agency, coded",
+                          "type": "string",
+                          "x-edi": {
+                            "type": "element",
+                            "order": 4,
+                            "ref": "0051"
+                          }
+                        },
+                        "messageReleaseNumber": {
+                          "description": "Release number within the current message version number.",
+                          "maxLength": 3,
+                          "propertyName": "messageReleaseNumber",
+                          "title": "Message release number",
+                          "type": "string",
+                          "x-edi": {
+                            "type": "element",
+                            "order": 3,
+                            "ref": "0054"
+                          }
+                        },
+                        "messageType": {
+                          "description": "Code identifying a type of message and assigned by its controlling agency.",
+                          "maxLength": 6,
+                          "propertyName": "messageType",
+                          "title": "Message type",
+                          "type": "string",
+                          "x-edi": {
+                            "type": "element",
+                            "order": 1,
+                            "ref": "0065"
+                          }
+                        },
+                        "messageTypeSubFunctionIdentification": {
+                          "description": "Code identifying a sub-function of a message type.",
+                          "maxLength": 6,
+                          "propertyName": "messageTypeSubFunctionIdentification",
+                          "title": "Message type sub-function identification",
+                          "type": "string",
+                          "x-edi": {
+                            "type": "element",
+                            "order": 7,
+                            "ref": "0113"
+                          }
+                        },
+                        "messageVersionNumber": {
+                          "description": "Version number of a message type.",
+                          "maxLength": 3,
+                          "propertyName": "messageVersionNumber",
+                          "title": "Message version number",
+                          "type": "string",
+                          "x-edi": {
+                            "type": "element",
+                            "order": 2,
+                            "ref": "0052"
+                          }
+                        }
+                      }
+                    },
+                    "messageReferenceNumber": {
+                      "description": "Unique message reference assigned by the sender.",
+                      "maxLength": 14,
+                      "propertyName": "messageReferenceNumber",
+                      "title": "MESSAGE REFERENCE NUMBER",
+                      "type": "string",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 1,
+                        "ref": "0062"
+                      }
+                    },
+                    "packageReferenceNumber": {
+                      "description": "Package reference number.",
+                      "maxLength": 35,
+                      "propertyName": "packageReferenceNumber",
+                      "title": "Package reference number",
+                      "type": "string",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 7,
+                        "ref": "0800"
+                      }
+                    },
+                    "referenceIdentification": {
+                      "type": "object",
+                      "title": "REFERENCE IDENTIFICATION",
+                      "description": "REFERENCE IDENTIFICATION.",
+                      "x-edi": {
+                        "type": "component",
+                        "order": 8,
+                        "ref": "S020"
+                      },
+                      "properties": {
+                        "referenceIdentificationNumber": {
+                          "description": "Reference identification number.",
+                          "maxLength": 35,
+                          "propertyName": "referenceIdentificationNumber",
+                          "title": "Reference identification number",
+                          "type": "string",
+                          "x-edi": {
+                            "type": "element",
+                            "order": 2,
+                            "ref": "0802"
+                          }
+                        },
+                        "referenceQualifier": {
+                          "description": "Reference qualifier.",
+                          "maxLength": 3,
+                          "propertyName": "referenceQualifier",
+                          "title": "Reference qualifier",
+                          "type": "string",
+                          "x-edi": {
+                            "type": "element",
+                            "order": 1,
+                            "ref": "0813"
+                          }
+                        }
+                      }
+                    },
+                    "securityReferenceNumber": {
+                      "description": "Security reference number.",
+                      "maxLength": 14,
+                      "propertyName": "securityReferenceNumber",
+                      "title": "Security reference number",
+                      "type": "string",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 9,
+                        "ref": "0534"
+                      }
+                    },
+                    "securitySegmentPosition": {
+                      "description": "Security segment position.",
+                      "maxLength": 6,
+                      "propertyName": "securitySegmentPosition",
+                      "title": "Security segment position",
+                      "type": "string",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 10,
+                        "ref": "0138"
+                      }
+                    },
+                    "serviceSegmentTagCoded": {
+                      "description": "Service segment tag, coded.",
+                      "maxLength": 3,
+                      "propertyName": "serviceSegmentTagCoded",
+                      "title": "Service segment tag coded",
+                      "type": "string",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 5,
+                        "ref": "0135"
+                      }
+                    },
+                    "syntaxErrorCoded": {
+                      "description": "Syntax error coded.",
+                      "maxLength": 3,
+                      "propertyName": "syntaxErrorCoded",
+                      "title": "Syntax error coded",
+                      "type": "string",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 4,
+                        "ref": "0085"
+                      }
+                    }
+                  }
+                },
+                "responseDetailItems": {
+                  "type": "array",
+                  "title": "responseDetailItems",
+                  "description": "GRP5 - Segment Group 5.",
+                  "x-edi": {
+                    "order": 2
+                  },
+                  "minItems": 0,
+                  "maxItems": 999,
+                  "items": {
+                    "type": "object",
+                    "x-edi": {
+                      "type": "group",
+                      "order": 2,
+                      "tag": "GRP5"
+                    },
+                    "properties": {
+                      "dataElementErrorIndicationItems": {
+                        "type": "array",
+                        "title": "Data element error indication items",
+                        "description": "Items: Data element error indication.",
+                        "x-edi": {
+                          "order": 2
+                        },
+                        "minItems": 0,
+                        "maxItems": 99,
+                        "items": {
+                          "type": "object",
+                          "x-edi": {
+                            "type": "segment",
+                            "order": 2,
+                            "tag": "UCD"
+                          },
+                          "properties": {
+                            "dataElementIdentification": {
+                              "type": "object",
+                              "title": "DATA ELEMENT IDENTIFICATION",
+                              "description": "DATA ELEMENT IDENTIFICATION.",
+                              "x-edi": {
+                                "type": "component",
+                                "order": 2,
+                                "ref": "S011"
+                              },
+                              "properties": {
+                                "erroneousComponentDataElementPosition": {
+                                  "description": "Erroneous component data element position.",
+                                  "max": 999,
+                                  "propertyName": "erroneousComponentDataElementPosition",
+                                  "title": "Erroneous component data element position",
+                                  "type": "number",
+                                  "x-edi": {
+                                    "type": "element",
+                                    "order": 2,
+                                    "ref": "0104"
+                                  }
+                                },
+                                "erroneousDataElementOccurrence": {
+                                  "description": "Erroneous data element occurrence.",
+                                  "max": 999999,
+                                  "propertyName": "erroneousDataElementOccurrence",
+                                  "title": "Erroneous data element occurrence",
+                                  "type": "number",
+                                  "x-edi": {
+                                    "type": "element",
+                                    "order": 3,
+                                    "ref": "0136"
+                                  }
+                                },
+                                "erroneousDataElementPositionInSegment": {
+                                  "description": "Erroneous data element position in segment.",
+                                  "max": 999,
+                                  "propertyName": "erroneousDataElementPositionInSegment",
+                                  "title": "Erroneous data element position in segment",
+                                  "type": "number",
+                                  "x-edi": {
+                                    "type": "element",
+                                    "order": 1,
+                                    "ref": "0098"
+                                  }
+                                }
+                              }
+                            },
+                            "syntaxErrorCoded": {
+                              "description": "Syntax error, coded.",
+                              "maxLength": 3,
+                              "propertyName": "syntaxErrorCoded",
+                              "title": "Syntax error coded",
+                              "type": "string",
+                              "x-edi": {
+                                "type": "element",
+                                "order": 1,
+                                "ref": "0085"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "segmentErrorIndication": {
+                        "type": "object",
+                        "title": "Segment error indication",
+                        "description": "Segment error indication.",
+                        "x-edi": {
+                          "type": "segment",
+                          "order": 1,
+                          "tag": "UCS"
+                        },
+                        "properties": {
+                          "segmentPositionInMessageBody": {
+                            "description": "Segment position in message body.",
+                            "max": 999999,
+                            "propertyName": "segmentPositionInMessageBody",
+                            "title": "Segment position in message body",
+                            "type": "number",
+                            "x-edi": {
+                              "type": "element",
+                              "order": 1,
+                              "ref": "0096"
+                            }
+                          },
+                          "syntaxErrorCoded": {
+                            "description": "Syntax error, coded.",
+                            "maxLength": 3,
+                            "propertyName": "syntaxErrorCoded",
+                            "title": "Syntax error coded",
+                            "type": "string",
+                            "x-edi": {
+                              "type": "element",
+                              "order": 2,
+                              "ref": "0085"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "interchangeHeader": {
+      "type": "object",
+      "title": "Interchange Header",
+      "description": "Interchange Header Segment",
+      "x-edi": {
+        "type": "segment",
+        "order": 1,
+        "tag": "UNB"
+      },
+      "properties": {
+        "dateAndTimeOfPreparation": {
+          "type": "object",
+          "title": "Date and Time of Preparation",
+          "description": "Date and time of preparation of the interchange.",
+          "x-edi": {
+            "type": "component",
+            "order": 4,
+            "ref": "S004"
+          },
+          "properties": {
+            "dateOfPreparation": {
+              "description": "Date the interchange was prepared.",
+              "maxLength": 35,
+              "propertyName": "dateOfPreparation",
+              "title": "Date of preparation",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0017"
+              }
+            },
+            "timeOfPreparation": {
+              "description": "Time the interchange was prepared.",
+              "maxLength": 4,
+              "propertyName": "timeOfPreparation",
+              "title": "Time of preparation",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0019"
+              }
+            }
+          }
+        },
+        "interchangeControlReference": {
+          "description": "Unique reference assigned by the sender to an interchange.",
+          "maxLength": 14,
+          "propertyName": "interchangeControlReference",
+          "title": "Interchange Control Reference",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 5,
+            "ref": "0020"
+          }
+        },
+        "interchangeRecipient": {
+          "type": "object",
+          "title": "Interchange Recipient",
+          "description": "Identification of the Recipient of the interchange.",
+          "x-edi": {
+            "type": "component",
+            "order": 3,
+            "ref": "S003"
+          },
+          "properties": {
+            "addressForReverseRouting": {
+              "description": "Address for reverse routing.",
+              "maxLength": 14,
+              "propertyName": "addressForReverseRouting",
+              "title": "Address for reverse routing",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "0014"
+              }
+            },
+            "partnerIdentificationCodeQualifier": {
+              "description": "Version number of the syntax identified in the syntax identifier (0001).",
+              "maxLength": 4,
+              "propertyName": "partnerIdentificationCodeQualifier",
+              "title": "Partner Identification Code Qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0007"
+              }
+            },
+            "recipientIdentification": {
+              "description": "Name or coded representation of the recipient of a data interchange.",
+              "maxLength": 35,
+              "propertyName": "recipientIdentification",
+              "title": "Recipient Identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0010"
+              }
+            }
+          }
+        },
+        "interchangeSender": {
+          "type": "object",
+          "title": "Interchange Sender",
+          "description": "Identification of the sender of the interchange.",
+          "x-edi": {
+            "type": "component",
+            "order": 2,
+            "ref": "S002"
+          },
+          "properties": {
+            "addressForReverseRouting": {
+              "description": "Address for reverse routing.",
+              "maxLength": 14,
+              "propertyName": "addressForReverseRouting",
+              "title": "Address for reverse routing",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "0008"
+              }
+            },
+            "partnerIdentificationCodeQualifier": {
+              "description": "Version number of the syntax identified in the syntax identifier (0001).",
+              "maxLength": 4,
+              "propertyName": "partnerIdentificationCodeQualifier",
+              "title": "Partner Identification Code Qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0007"
+              }
+            },
+            "senderIdentification": {
+              "description": "Name or coded representation of the sender of a data interchange.",
+              "maxLength": 35,
+              "propertyName": "senderIdentification",
+              "title": "Sender Identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0004"
+              }
+            }
+          }
+        },
+        "syntax": {
+          "type": "object",
+          "title": "SYNTAX",
+          "description": "Identification of the agency controlling the syntax and indication of syntax level.",
+          "x-edi": {
+            "type": "component",
+            "order": 1,
+            "ref": "S001"
+          },
+          "properties": {
+            "syntaxIdentifier": {
+              "description": "Coded identification of the agency controlling a syntax and syntax level used in an interchange.",
+              "maxLength": 4,
+              "propertyName": "syntaxIdentifier",
+              "title": "Syntax Identifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0001"
+              }
+            },
+            "syntaxTypeVersionNumber": {
+              "description": "Version number of the syntax identified in the syntax identifier (0001).",
+              "maxLength": 3,
+              "propertyName": "syntaxTypeVersionNumber",
+              "title": "Syntax Type Version Number",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0002"
+              }
+            }
+          }
+        }
+      }
+    },
+    "interchangeResponse": {
+      "type": "object",
+      "title": "Interchange response",
+      "description": "To identify the subject interchange, to indicate interchange receipt, to indicate acknowledgement or rejection (action taken) of the UNA, UNB and UNZ segments, and to identify any error related to these segments. It can also identify errors related to the USA, USC, USD, USH, USR, UST, or USU security segments when they appear at the interchange level. Depending on the action code, it may also indicate the action taken on the groups, messages, and packages within that interchange.",
+      "x-edi": {
+        "type": "segment",
+        "order": 3,
+        "tag": "UCI"
+      },
+      "properties": {
+        "actionCoded": {
+          "description": "Action coded.",
+          "maxLength": 3,
+          "propertyName": "actionCoded",
+          "title": "Action coded",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 4,
+            "ref": "0083"
+          }
+        },
+        "dataElementIdentification": {
+          "type": "object",
+          "title": "DATA ELEMENT IDENTIFICATION",
+          "description": "DATA ELEMENT IDENTIFICATION.",
+          "x-edi": {
+            "type": "component",
+            "order": 7,
+            "ref": "S011"
+          },
+          "properties": {
+            "erroneousComponentDataElementPosition": {
+              "description": "Erroneous component data element position.",
+              "max": 999,
+              "propertyName": "erroneousComponentDataElementPosition",
+              "title": "Erroneous component data element position",
+              "type": "number",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0104"
+              }
+            },
+            "erroneousDataElementOccurrence": {
+              "description": "Erroneous data element occurrence.",
+              "max": 999999,
+              "propertyName": "erroneousDataElementOccurrence",
+              "title": "Erroneous data element occurrence",
+              "type": "number",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "0136"
+              }
+            },
+            "erroneousDataElementPositionInSegment": {
+              "description": "Erroneous data element position in segment.",
+              "max": 999,
+              "propertyName": "erroneousDataElementPositionInSegment",
+              "title": "Erroneous data element position in segment",
+              "type": "number",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0098"
+              }
+            }
+          }
+        },
+        "interchangeControlReference": {
+          "description": "Interchange control reference.",
+          "maxLength": 14,
+          "propertyName": "interchangeControlReference",
+          "title": "Interchange control reference",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 1,
+            "ref": "0020"
+          }
+        },
+        "interchangeRecipient": {
+          "type": "object",
+          "title": "INTERCHANGE RECIPIENT",
+          "description": "INTERCHANGE RECIPIENT.",
+          "x-edi": {
+            "type": "component",
+            "order": 3,
+            "ref": "S003"
+          },
+          "properties": {
+            "identificationCodeQualifier": {
+              "description": "Code identifying a user or association maintained code list.",
+              "maxLength": 4,
+              "propertyName": "identificationCodeQualifier",
+              "title": "Identification code qualifier ",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0007"
+              }
+            },
+            "interchangeRecipientIdentification": {
+              "description": "Interchange recipient identification.",
+              "maxLength": 35,
+              "propertyName": "interchangeRecipientIdentification",
+              "title": "Interchange recipient identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0010"
+              }
+            },
+            "interchangeRecipientInternalIdentification": {
+              "description": "Interchange recipient internal identification.",
+              "maxLength": 35,
+              "propertyName": "interchangeRecipientInternalIdentification",
+              "title": "Interchange recipient internal identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "0014"
+              }
+            },
+            "interchangeRecipientInternalSubIdentification": {
+              "description": "Interchange recipient internal sub-identification.",
+              "maxLength": 35,
+              "propertyName": "interchangeRecipientInternalSubIdentification",
+              "title": "Interchange recipient internal sub-identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 4,
+                "ref": "0046"
+              }
+            }
+          }
+        },
+        "interchangeSender": {
+          "type": "object",
+          "title": "INTERCHANGE SENDER",
+          "description": "INTERCHANGE SENDER.",
+          "x-edi": {
+            "type": "component",
+            "order": 2,
+            "ref": "S002"
+          },
+          "properties": {
+            "identificationCodeQualifier": {
+              "description": "Code identifying a user or association maintained code list.",
+              "maxLength": 4,
+              "propertyName": "identificationCodeQualifier",
+              "title": "Identification code qualifier ",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0007"
+              }
+            },
+            "interchangeSenderIdentification": {
+              "description": "Interchange sender identification.",
+              "maxLength": 35,
+              "propertyName": "interchangeSenderIdentification",
+              "title": "Interchange sender identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0004"
+              }
+            },
+            "interchangeSenderInternalIdentification": {
+              "description": "Interchange sender internal identification.",
+              "maxLength": 35,
+              "propertyName": "interchangeSenderInternalIdentification",
+              "title": "Interchange sender internal identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "0008"
+              }
+            },
+            "interchangeSenderInternalSubIdentification": {
+              "description": "Interchange sender internal sub-identification.",
+              "maxLength": 35,
+              "propertyName": "interchangeSenderInternalSubIdentification",
+              "title": "Interchange sender internal sub-identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 4,
+                "ref": "0042"
+              }
+            }
+          }
+        },
+        "securityReferenceNumber": {
+          "description": "Security reference number.",
+          "maxLength": 14,
+          "propertyName": "securityReferenceNumber",
+          "title": "Security reference number",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 8,
+            "ref": "0534"
+          }
+        },
+        "securitySegmentPosition": {
+          "description": "Security segment position.",
+          "maxLength": 6,
+          "propertyName": "securitySegmentPosition",
+          "title": "Security segment position",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 9,
+            "ref": "0138"
+          }
+        },
+        "serviceSegmentTagCoded": {
+          "description": "Service segment tag, coded.",
+          "maxLength": 3,
+          "propertyName": "serviceSegmentTagCoded",
+          "title": "Service segment tag coded",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 6,
+            "ref": "0135"
+          }
+        },
+        "syntaxErrorCoded": {
+          "description": "Syntax error coded.",
+          "maxLength": 3,
+          "propertyName": "syntaxErrorCoded",
+          "title": "Syntax error coded",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 5,
+            "ref": "0085"
+          }
+        }
+      }
+    },
+    "interchangeTrailer": {
+      "type": "object",
+      "title": "Interchange Trailer",
+      "description": "Close of the Interchange message.",
+      "x-edi": {
+        "type": "segment",
+        "order": 7,
+        "tag": "UNZ"
+      },
+      "properties": {
+        "interchangeControlCount": {
+          "description": "Count either of the number of messages or, if used, of the number of functional groups in an interchange.",
+          "max": 9999999999,
+          "propertyName": "interchangeControlCount",
+          "title": "Interchange Control Count",
+          "type": "number",
+          "x-edi": {
+            "type": "element",
+            "order": 1,
+            "ref": "0036"
+          }
+        },
+        "interchangeControlReference": {
+          "description": "Unique reference assigned by the sender to an interchange.",
+          "maxLength": 14,
+          "propertyName": "interchangeControlReference",
+          "title": "Interchange Control Reference",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 2,
+            "ref": "0020"
+          }
+        }
+      }
+    },
+    "messageHeader": {
+      "type": "object",
+      "title": "Message Header",
+      "description": " A service segment starting and uniquely identifying a message. The message type code for the Application error and acknowledgement message is APERAK.",
+      "x-edi": {
+        "type": "segment",
+        "order": 2,
+        "tag": "UNH"
+      },
+      "properties": {
+        "commonAccessReference": {
+          "description": "Reference serving as a key to relate all subsequent transfers of data to the same business case or file.",
+          "maxLength": 35,
+          "propertyName": "commonAccessReference",
+          "title": "COMMON ACCESS REFERENCE",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 3,
+            "ref": "0068"
+          }
+        },
+        "messageIdentifier": {
+          "type": "object",
+          "title": "MESSAGE IDENTIFIER",
+          "description": "Identification of the type, version, etc. of the message being interchanged. ",
+          "x-edi": {
+            "type": "component",
+            "order": 2,
+            "ref": "S009"
+          },
+          "properties": {
+            "associationAssignedCode": {
+              "description": "Code, assigned by the association responsible for the design and maintenance of the message type concerned, which further identifies the message.",
+              "maxLength": 6,
+              "propertyName": "associationAssignedCode",
+              "title": "Association assigned code",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 5,
+                "ref": "0057"
+              }
+            },
+            "codeListDirectoryVersionNumber": {
+              "description": "Version number of the code list directory.",
+              "maxLength": 6,
+              "propertyName": "codeListDirectoryVersionNumber",
+              "title": "Code list directory version number",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 6,
+                "ref": "0110"
+              }
+            },
+            "controllingAgencyCoded": {
+              "description": "Code identifying a controlling agency.",
+              "maxLength": 3,
+              "propertyName": "controllingAgencyCoded",
+              "title": "Controlling agency, coded",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 4,
+                "ref": "0051"
+              }
+            },
+            "messageReleaseNumber": {
+              "description": "Release number within the current message version number.",
+              "maxLength": 3,
+              "propertyName": "messageReleaseNumber",
+              "title": "Message release number",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "0054"
+              }
+            },
+            "messageType": {
+              "description": "Code identifying a type of message and assigned by its controlling agency.",
+              "maxLength": 6,
+              "propertyName": "messageType",
+              "title": "Message type",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0065"
+              }
+            },
+            "messageTypeSubFunctionIdentification": {
+              "description": "Code identifying a sub-function of a message type.",
+              "maxLength": 6,
+              "propertyName": "messageTypeSubFunctionIdentification",
+              "title": "Message type sub-function identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 7,
+                "ref": "0113"
+              }
+            },
+            "messageVersionNumber": {
+              "description": "Version number of a message type.",
+              "maxLength": 3,
+              "propertyName": "messageVersionNumber",
+              "title": "Message version number",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0052"
+              }
+            }
+          }
+        },
+        "messageImplementationGuidelineIdentification": {
+          "type": "object",
+          "title": "MESSAGE IMPLEMENTATION GUIDELINE IDENTIFICATION",
+          "description": "Identification of a message implementation guideline by its identifier, version, release and source. ",
+          "x-edi": {
+            "type": "component",
+            "order": 6,
+            "ref": "S017"
+          },
+          "properties": {
+            "controllingAgencyCoded": {
+              "description": "Code identifying a controlling agency.",
+              "maxLength": 3,
+              "propertyName": "controllingAgencyCoded",
+              "title": "Controlling agency, coded",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 4,
+                "ref": "0051"
+              }
+            },
+            "messageImplementationGuidelineIdentification": {
+              "description": "Coded identification of the message implementation guideline, assigned by its controlling agency.",
+              "maxLength": 14,
+              "propertyName": "messageImplementationGuidelineIdentification",
+              "title": "Message implementation guideline identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0121"
+              }
+            },
+            "messageImplementationGuidelineReleaseNumber": {
+              "description": "Release number within the message implementation guideline version number.",
+              "maxLength": 3,
+              "propertyName": "messageImplementationGuidelineReleaseNumber",
+              "title": "Message implementation guideline release number",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "0124"
+              }
+            },
+            "messageImplementationGuidelineVersionNumber": {
+              "description": "Version number of the message implementation guideline.",
+              "maxLength": 3,
+              "propertyName": "messageImplementationGuidelineVersionNumber",
+              "title": "Message implementation guideline version number",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0122"
+              }
+            }
+          }
+        },
+        "messageReferenceNumber": {
+          "description": "Unique message reference assigned by the sender.",
+          "maxLength": 14,
+          "propertyName": "messageReferenceNumber",
+          "title": "MESSAGE REFERENCE NUMBER",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 1,
+            "ref": "0062"
+          }
+        },
+        "messageSubsetIdentification": {
+          "type": "object",
+          "title": "MESSAGE SUBSET IDENTIFICATION",
+          "description": "Identification of a message subset by its identifier, version, release and source. ",
+          "x-edi": {
+            "type": "component",
+            "order": 5,
+            "ref": "S016"
+          },
+          "properties": {
+            "controllingAgencyCoded": {
+              "description": "Code identifying a controlling agency.",
+              "maxLength": 3,
+              "propertyName": "controllingAgencyCoded",
+              "title": "Controlling agency, coded",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 4,
+                "ref": "0051"
+              }
+            },
+            "messageSubsetIdentification": {
+              "description": "Coded identification of a message subset, assigned by its controlling agency.",
+              "maxLength": 14,
+              "propertyName": "messageSubsetIdentification",
+              "title": "Message subset identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0115"
+              }
+            },
+            "messageSubsetReleaseNumber": {
+              "description": "Release number within the message subset version number.",
+              "maxLength": 3,
+              "propertyName": "messageSubsetReleaseNumber",
+              "title": "Message subset release number",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "0118"
+              }
+            },
+            "messageSubsetVersionNumber": {
+              "description": "Version number of the message subset.",
+              "maxLength": 3,
+              "propertyName": "messageSubsetVersionNumber",
+              "title": "Message subset version number",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0116"
+              }
+            }
+          }
+        },
+        "scenarioIdentification": {
+          "type": "object",
+          "title": "SCENARIO IDENTIFICATION",
+          "description": "Identification of a scenario. ",
+          "x-edi": {
+            "type": "component",
+            "order": 7,
+            "ref": "S018"
+          },
+          "properties": {
+            "controllingAgencyCoded": {
+              "description": "Code identifying a controlling agency.",
+              "maxLength": 3,
+              "propertyName": "controllingAgencyCoded",
+              "title": "Controlling agency, coded",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 4,
+                "ref": "0051"
+              }
+            },
+            "scenarioIdentification": {
+              "description": "Code identifying scenario.",
+              "maxLength": 14,
+              "propertyName": "scenarioIdentification",
+              "title": "Scenario identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0127"
+              }
+            },
+            "scenarioReleaseNumber": {
+              "description": "Release number within the scenario version number.",
+              "maxLength": 3,
+              "propertyName": "scenarioReleaseNumber",
+              "title": "Scenario release number",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "0130"
+              }
+            },
+            "scenarioVersionNumber": {
+              "description": "Version number of a scenario.",
+              "maxLength": 3,
+              "propertyName": "scenarioVersionNumber",
+              "title": "Scenario version number",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0128"
+              }
+            }
+          }
+        },
+        "statusOfTheTransfer": {
+          "type": "object",
+          "title": "STATUS OF THE TRANSFER",
+          "description": "Statement that the message is one in a sequence of transfers relating to the same topic. ",
+          "x-edi": {
+            "type": "component",
+            "order": 4,
+            "ref": "S010"
+          },
+          "properties": {
+            "firstAndLastTransfer": {
+              "description": "Indication used for the first and last message in a sequence of messages related to the same topic.",
+              "propertyName": "firstAndLastTransfer",
+              "title": "First and last transfer",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0073"
+              }
+            },
+            "sequenceOfTransfers": {
+              "description": "Number assigned by the sender indicating the transfer sequence of a message related to the same topic. The message could be an addition or a change to an earlier transfer related to the same topic.",
+              "max": 99,
+              "propertyName": "sequenceOfTransfers",
+              "title": "Sequence of transfers",
+              "type": "number",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0070"
+              }
+            }
+          }
+        }
+      }
+    },
+    "messageResponses": {
+      "type": "array",
+      "title": "messageResponses",
+      "description": "GRP1 - Segment Group 1.",
+      "x-edi": {
+        "order": 4
+      },
+      "minItems": 0,
+      "maxItems": 999999,
+      "items": {
+        "type": "object",
+        "x-edi": {
+          "type": "group",
+          "order": 4,
+          "tag": "GRP1"
+        },
+        "properties": {
+          "freeTextItems": {
+            "type": "array",
+            "title": "Free Text Items",
+            "description": "Items:  A segment to provide explanation and/or supplementary information related to the specified application error.",
+            "x-edi": {
+              "order": 3
+            },
+            "minItems": 0,
+            "maxItems": 99,
+            "items": {
+              "type": "object",
+              "x-edi": {
+                "type": "segment",
+                "order": 3,
+                "tag": "FTX"
+              },
+              "properties": {
+                "freeTextFormatCode": {
+                  "description": "Code specifying the format of free text.",
+                  "maxLength": 3,
+                  "propertyName": "freeTextFormatCode",
+                  "title": "FREE TEXT FORMAT CODE",
+                  "type": "string",
+                  "x-edi": {
+                    "type": "element",
+                    "order": 6,
+                    "ref": "4447"
+                  }
+                },
+                "freeTextFunctionCode": {
+                  "description": "Code specifying the function of free text.",
+                  "maxLength": 3,
+                  "propertyName": "freeTextFunctionCode",
+                  "title": "FREE TEXT FUNCTION CODE",
+                  "type": "string",
+                  "x-edi": {
+                    "type": "element",
+                    "order": 2,
+                    "ref": "4453"
+                  }
+                },
+                "languageNameCode": {
+                  "description": "Code specifying the language name.",
+                  "maxLength": 3,
+                  "propertyName": "languageNameCode",
+                  "title": "LANGUAGE NAME CODE",
+                  "type": "string",
+                  "x-edi": {
+                    "type": "element",
+                    "order": 5,
+                    "ref": "3453"
+                  }
+                },
+                "textLiteral": {
+                  "type": "object",
+                  "title": "TEXT LITERAL",
+                  "description": "Free text; one to five lines. ",
+                  "x-edi": {
+                    "type": "component",
+                    "order": 4,
+                    "ref": "C108"
+                  },
+                  "properties": {
+                    "freeText_1": {
+                      "description": "Free form text.",
+                      "maxLength": 512,
+                      "propertyName": "freeText_1",
+                      "title": "Free text",
+                      "type": "string",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 1,
+                        "ref": "4440"
+                      }
+                    },
+                    "freeText_2": {
+                      "description": "Free form text.",
+                      "maxLength": 512,
+                      "propertyName": "freeText_2",
+                      "title": "Free text",
+                      "type": "string",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 2,
+                        "ref": "4440"
+                      }
+                    },
+                    "freeText_3": {
+                      "description": "Free form text.",
+                      "maxLength": 512,
+                      "propertyName": "freeText_3",
+                      "title": "Free text",
+                      "type": "string",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 3,
+                        "ref": "4440"
+                      }
+                    },
+                    "freeText_4": {
+                      "description": "Free form text.",
+                      "maxLength": 512,
+                      "propertyName": "freeText_4",
+                      "title": "Free text",
+                      "type": "string",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 4,
+                        "ref": "4440"
+                      }
+                    },
+                    "freeText_5": {
+                      "description": "Free form text.",
+                      "maxLength": 512,
+                      "propertyName": "freeText_5",
+                      "title": "Free text",
+                      "type": "string",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 5,
+                        "ref": "4440"
+                      }
+                    }
+                  }
+                },
+                "textReference": {
+                  "type": "object",
+                  "title": "TEXT REFERENCE",
+                  "description": "Coded reference to a standard text and its source. ",
+                  "x-edi": {
+                    "type": "component",
+                    "order": 3,
+                    "ref": "C107"
+                  },
+                  "properties": {
+                    "codeListIdentificationCode": {
+                      "description": "Code identifying a user or association maintained code list.",
+                      "maxLength": 17,
+                      "propertyName": "codeListIdentificationCode",
+                      "title": "Code list identification code",
+                      "type": "string",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 2,
+                        "ref": "1131"
+                      }
+                    },
+                    "codeListResponsibleAgencyCode": {
+                      "description": "Code specifying the agency responsible for a code list.",
+                      "maxLength": 3,
+                      "propertyName": "codeListResponsibleAgencyCode",
+                      "title": "Code list responsible agency code",
+                      "type": "string",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 3,
+                        "ref": "3055"
+                      }
+                    },
+                    "freeTextDescriptionCode": {
+                      "description": "Code specifying free form text.",
+                      "maxLength": 17,
+                      "propertyName": "freeTextDescriptionCode",
+                      "title": "Free text description code",
+                      "type": "string",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 1,
+                        "ref": "4441"
+                      }
+                    }
+                  }
+                },
+                "textSubjectCodeQualifier": {
+                  "description": "Code qualifying the subject of the text.",
+                  "maxLength": 3,
+                  "propertyName": "textSubjectCodeQualifier",
+                  "title": "TEXT SUBJECT CODE QUALIFIER",
+                  "type": "string",
+                  "x-edi": {
+                    "type": "element",
+                    "order": 1,
+                    "ref": "4451"
+                  }
+                }
+              }
+            }
+          },
+          "messageLevelActionAndErrorCodes": {
+            "type": "object",
+            "title": "Message Level Action and Error Codes",
+            "description": "Message Level Action and Error Codes.",
+            "x-edi": {
+              "type": "segment",
+              "order": 2,
+              "tag": "UCX"
+            },
+            "properties": {
+              "actionCoded": {
+                "description": "Action coded.",
+                "maxLength": 3,
+                "propertyName": "actionCoded",
+                "title": "Action coded",
+                "type": "string",
+                "x-edi": {
+                  "type": "element",
+                  "order": 1,
+                  "ref": "0083"
+                }
+              },
+              "syntaxErrorCoded": {
+                "description": "Syntax error coded.",
+                "maxLength": 3,
+                "propertyName": "syntaxErrorCoded",
+                "title": "Syntax error coded",
+                "type": "string",
+                "x-edi": {
+                  "type": "element",
+                  "order": 2,
+                  "ref": "0085"
+                }
+              }
+            }
+          },
+          "messagePackageResponse": {
+            "type": "object",
+            "title": "Message/package response",
+            "description": "Message/package response.",
+            "x-edi": {
+              "type": "segment",
+              "order": 1,
+              "tag": "UCM"
+            },
+            "properties": {
+              "actionCoded": {
+                "description": "Action coded.",
+                "maxLength": 3,
+                "propertyName": "actionCoded",
+                "title": "Action coded",
+                "type": "string",
+                "x-edi": {
+                  "type": "element",
+                  "order": 3,
+                  "ref": "0083"
+                }
+              },
+              "dataElementIdentification": {
+                "type": "object",
+                "title": "DATA ELEMENT IDENTIFICATION",
+                "description": "DATA ELEMENT IDENTIFICATION.",
+                "x-edi": {
+                  "type": "component",
+                  "order": 6,
+                  "ref": "S011"
+                },
+                "properties": {
+                  "erroneousComponentDataElementPosition": {
+                    "description": "Erroneous component data element position.",
+                    "max": 999,
+                    "propertyName": "erroneousComponentDataElementPosition",
+                    "title": "Erroneous component data element position",
+                    "type": "number",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 2,
+                      "ref": "0104"
+                    }
+                  },
+                  "erroneousDataElementOccurrence": {
+                    "description": "Erroneous data element occurrence.",
+                    "max": 999999,
+                    "propertyName": "erroneousDataElementOccurrence",
+                    "title": "Erroneous data element occurrence",
+                    "type": "number",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 3,
+                      "ref": "0136"
+                    }
+                  },
+                  "erroneousDataElementPositionInSegment": {
+                    "description": "Erroneous data element position in segment.",
+                    "max": 999,
+                    "propertyName": "erroneousDataElementPositionInSegment",
+                    "title": "Erroneous data element position in segment",
+                    "type": "number",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 1,
+                      "ref": "0098"
+                    }
+                  }
+                }
+              },
+              "messageIdentifier": {
+                "type": "object",
+                "title": "MESSAGE IDENTIFIER",
+                "description": "Identification of the type, version, etc. of the message being interchanged. ",
+                "x-edi": {
+                  "type": "component",
+                  "order": 2,
+                  "ref": "S009"
+                },
+                "properties": {
+                  "associationAssignedCode": {
+                    "description": "Code, assigned by the association responsible for the design and maintenance of the message type concerned, which further identifies the message.",
+                    "maxLength": 6,
+                    "propertyName": "associationAssignedCode",
+                    "title": "Association assigned code",
+                    "type": "string",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 5,
+                      "ref": "0057"
+                    }
+                  },
+                  "codeListDirectoryVersionNumber": {
+                    "description": "Version number of the code list directory.",
+                    "maxLength": 6,
+                    "propertyName": "codeListDirectoryVersionNumber",
+                    "title": "Code list directory version number",
+                    "type": "string",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 6,
+                      "ref": "0110"
+                    }
+                  },
+                  "controllingAgencyCoded": {
+                    "description": "Code identifying a controlling agency.",
+                    "maxLength": 3,
+                    "propertyName": "controllingAgencyCoded",
+                    "title": "Controlling agency, coded",
+                    "type": "string",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 4,
+                      "ref": "0051"
+                    }
+                  },
+                  "messageReleaseNumber": {
+                    "description": "Release number within the current message version number.",
+                    "maxLength": 3,
+                    "propertyName": "messageReleaseNumber",
+                    "title": "Message release number",
+                    "type": "string",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 3,
+                      "ref": "0054"
+                    }
+                  },
+                  "messageType": {
+                    "description": "Code identifying a type of message and assigned by its controlling agency.",
+                    "maxLength": 6,
+                    "propertyName": "messageType",
+                    "title": "Message type",
+                    "type": "string",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 1,
+                      "ref": "0065"
+                    }
+                  },
+                  "messageTypeSubFunctionIdentification": {
+                    "description": "Code identifying a sub-function of a message type.",
+                    "maxLength": 6,
+                    "propertyName": "messageTypeSubFunctionIdentification",
+                    "title": "Message type sub-function identification",
+                    "type": "string",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 7,
+                      "ref": "0113"
+                    }
+                  },
+                  "messageVersionNumber": {
+                    "description": "Version number of a message type.",
+                    "maxLength": 3,
+                    "propertyName": "messageVersionNumber",
+                    "title": "Message version number",
+                    "type": "string",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 2,
+                      "ref": "0052"
+                    }
+                  }
+                }
+              },
+              "messageReferenceNumber": {
+                "description": "Unique message reference assigned by the sender.",
+                "maxLength": 14,
+                "propertyName": "messageReferenceNumber",
+                "title": "MESSAGE REFERENCE NUMBER",
+                "type": "string",
+                "x-edi": {
+                  "type": "element",
+                  "order": 1,
+                  "ref": "0062"
+                }
+              },
+              "packageReferenceNumber": {
+                "description": "Package reference number.",
+                "maxLength": 35,
+                "propertyName": "packageReferenceNumber",
+                "title": "Package reference number",
+                "type": "string",
+                "x-edi": {
+                  "type": "element",
+                  "order": 7,
+                  "ref": "0800"
+                }
+              },
+              "referenceIdentification": {
+                "type": "object",
+                "title": "REFERENCE IDENTIFICATION",
+                "description": "REFERENCE IDENTIFICATION.",
+                "x-edi": {
+                  "type": "component",
+                  "order": 8,
+                  "ref": "S020"
+                },
+                "properties": {
+                  "referenceIdentificationNumber": {
+                    "description": "Reference identification number.",
+                    "maxLength": 35,
+                    "propertyName": "referenceIdentificationNumber",
+                    "title": "Reference identification number",
+                    "type": "string",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 2,
+                      "ref": "0802"
+                    }
+                  },
+                  "referenceQualifier": {
+                    "description": "Reference qualifier.",
+                    "maxLength": 3,
+                    "propertyName": "referenceQualifier",
+                    "title": "Reference qualifier",
+                    "type": "string",
+                    "x-edi": {
+                      "type": "element",
+                      "order": 1,
+                      "ref": "0813"
+                    }
+                  }
+                }
+              },
+              "securityReferenceNumber": {
+                "description": "Security reference number.",
+                "maxLength": 14,
+                "propertyName": "securityReferenceNumber",
+                "title": "Security reference number",
+                "type": "string",
+                "x-edi": {
+                  "type": "element",
+                  "order": 9,
+                  "ref": "0534"
+                }
+              },
+              "securitySegmentPosition": {
+                "description": "Security segment position.",
+                "maxLength": 6,
+                "propertyName": "securitySegmentPosition",
+                "title": "Security segment position",
+                "type": "string",
+                "x-edi": {
+                  "type": "element",
+                  "order": 10,
+                  "ref": "0138"
+                }
+              },
+              "serviceSegmentTagCoded": {
+                "description": "Service segment tag, coded.",
+                "maxLength": 3,
+                "propertyName": "serviceSegmentTagCoded",
+                "title": "Service segment tag coded",
+                "type": "string",
+                "x-edi": {
+                  "type": "element",
+                  "order": 5,
+                  "ref": "0135"
+                }
+              },
+              "syntaxErrorCoded": {
+                "description": "Syntax error coded.",
+                "maxLength": 3,
+                "propertyName": "syntaxErrorCoded",
+                "title": "Syntax error coded",
+                "type": "string",
+                "x-edi": {
+                  "type": "element",
+                  "order": 4,
+                  "ref": "0085"
+                }
+              }
+            }
+          },
+          "responseDetailItems": {
+            "type": "array",
+            "title": "responseDetailItems",
+            "description": "GRP2 - Segment Group 2.",
+            "x-edi": {
+              "order": 4
+            },
+            "minItems": 0,
+            "maxItems": 999,
+            "items": {
+              "type": "object",
+              "x-edi": {
+                "type": "group",
+                "order": 4,
+                "tag": "GRP2"
+              },
+              "properties": {
+                "dataElementErrorIndicationsItems": {
+                  "type": "array",
+                  "title": "Data element error indications items",
+                  "description": "Items: Data element error indications.",
+                  "x-edi": {
+                    "order": 2
+                  },
+                  "minItems": 0,
+                  "maxItems": 99,
+                  "items": {
+                    "type": "object",
+                    "x-edi": {
+                      "type": "segment",
+                      "order": 2,
+                      "tag": "UCD"
+                    },
+                    "properties": {
+                      "dataElementIdentification": {
+                        "type": "object",
+                        "title": "DATA ELEMENT IDENTIFICATION",
+                        "description": "DATA ELEMENT IDENTIFICATION.",
+                        "x-edi": {
+                          "type": "component",
+                          "order": 2,
+                          "ref": "S011"
+                        },
+                        "properties": {
+                          "erroneousComponentDataElementPosition": {
+                            "description": "Erroneous component data element position.",
+                            "max": 999,
+                            "propertyName": "erroneousComponentDataElementPosition",
+                            "title": "Erroneous component data element position",
+                            "type": "number",
+                            "x-edi": {
+                              "type": "element",
+                              "order": 2,
+                              "ref": "0104"
+                            }
+                          },
+                          "erroneousDataElementOccurrence": {
+                            "description": "Erroneous data element occurrence.",
+                            "max": 999999,
+                            "propertyName": "erroneousDataElementOccurrence",
+                            "title": "Erroneous data element occurrence",
+                            "type": "number",
+                            "x-edi": {
+                              "type": "element",
+                              "order": 3,
+                              "ref": "0136"
+                            }
+                          },
+                          "erroneousDataElementPositionInSegment": {
+                            "description": "Erroneous data element position in segment.",
+                            "max": 999,
+                            "propertyName": "erroneousDataElementPositionInSegment",
+                            "title": "Erroneous data element position in segment",
+                            "type": "number",
+                            "x-edi": {
+                              "type": "element",
+                              "order": 1,
+                              "ref": "0098"
+                            }
+                          }
+                        }
+                      },
+                      "syntaxErrorCoded": {
+                        "description": "Syntax error, coded.",
+                        "maxLength": 3,
+                        "propertyName": "syntaxErrorCoded",
+                        "title": "Syntax error coded",
+                        "type": "string",
+                        "x-edi": {
+                          "type": "element",
+                          "order": 1,
+                          "ref": "0085"
+                        }
+                      }
+                    }
+                  }
+                },
+                "segmentErrorIndication": {
+                  "type": "object",
+                  "title": "Segment error indication",
+                  "description": "Segment error indication.",
+                  "x-edi": {
+                    "type": "segment",
+                    "order": 1,
+                    "tag": "UCS"
+                  },
+                  "properties": {
+                    "segmentPositionInMessageBody": {
+                      "description": "Segment position in message body.",
+                      "max": 999999,
+                      "propertyName": "segmentPositionInMessageBody",
+                      "title": "Segment position in message body",
+                      "type": "number",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 1,
+                        "ref": "0096"
+                      }
+                    },
+                    "syntaxErrorCoded": {
+                      "description": "Syntax error, coded.",
+                      "maxLength": 3,
+                      "propertyName": "syntaxErrorCoded",
+                      "title": "Syntax error coded",
+                      "type": "string",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 2,
+                        "ref": "0085"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "messageTrailer": {
+      "type": "object",
+      "title": "Message Trailer",
+      "description": " A service segment ending a message, giving the total number of segments in the message (including the UNH & UNT) and the control reference number of the message.",
+      "x-edi": {
+        "type": "segment",
+        "order": 6,
+        "tag": "UNT"
+      },
+      "properties": {
+        "messageReferenceNumber": {
+          "description": "Unique message reference assigned by the sender.",
+          "maxLength": 14,
+          "propertyName": "messageReferenceNumber",
+          "title": "MESSAGE REFERENCE NUMBER",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 2,
+            "ref": "0062"
+          }
+        },
+        "numberOfSegmentsInAMessage": {
+          "description": "The number of segments in a message body, plus the message header segment and message trailer segment.",
+          "max": 9999999999,
+          "propertyName": "numberOfSegmentsInAMessage",
+          "title": "NUMBER OF SEGMENTS IN A MESSAGE",
+          "type": "number",
+          "x-edi": {
+            "type": "element",
+            "order": 1,
+            "ref": "0074"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1397 @@
+{
+  "type": "object",
+  "title": "FRC",
+  "properties": {
+    "interchangeHeader": {
+      "type": "object",
+      "title": "Interchange Header",
+      "description": "Interchange Header Segment",
+      "x-edi": {
+        "type": "segment",
+        "order": 1,
+        "tag": "UNB"
+      },
+      "properties": {
+        "dateAndTimeOfPreparation": {
+          "type": "object",
+          "title": "Date and Time of Preparation",
+          "description": "Date and time of preparation of the interchange.",
+          "x-edi": {
+            "type": "component",
+            "order": 4,
+            "ref": "S004"
+          },
+          "properties": {
+            "dateOfPreparation": {
+              "description": "Date the interchange was prepared.",
+              "maxLength": 35,
+              "propertyName": "dateOfPreparation",
+              "title": "Date of preparation",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0017"
+              }
+            },
+            "timeOfPreparation": {
+              "description": "Time the interchange was prepared.",
+              "maxLength": 4,
+              "propertyName": "timeOfPreparation",
+              "title": "Time of preparation",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0019"
+              }
+            }
+          }
+        },
+        "interchangeControlReference": {
+          "description": "Unique reference assigned by the sender to an interchange.",
+          "maxLength": 14,
+          "propertyName": "interchangeControlReference",
+          "title": "Interchange Control Reference",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 5,
+            "ref": "0020"
+          }
+        },
+        "interchangeRecipient": {
+          "type": "object",
+          "title": "Interchange Recipient",
+          "description": "Identification of the Recipient of the interchange.",
+          "x-edi": {
+            "type": "component",
+            "order": 3,
+            "ref": "S003"
+          },
+          "properties": {
+            "addressForReverseRouting": {
+              "description": "Address for reverse routing.",
+              "maxLength": 14,
+              "propertyName": "addressForReverseRouting",
+              "title": "Address for reverse routing",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "0014"
+              }
+            },
+            "partnerIdentificationCodeQualifier": {
+              "description": "Version number of the syntax identified in the syntax identifier (0001).",
+              "maxLength": 4,
+              "propertyName": "partnerIdentificationCodeQualifier",
+              "title": "Partner Identification Code Qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0007"
+              }
+            },
+            "recipientIdentification": {
+              "description": "Name or coded representation of the recipient of a data interchange.",
+              "maxLength": 35,
+              "propertyName": "recipientIdentification",
+              "title": "Recipient Identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0010"
+              }
+            }
+          }
+        },
+        "interchangeSender": {
+          "type": "object",
+          "title": "Interchange Sender",
+          "description": "Identification of the sender of the interchange.",
+          "x-edi": {
+            "type": "component",
+            "order": 2,
+            "ref": "S002"
+          },
+          "properties": {
+            "addressForReverseRouting": {
+              "description": "Address for reverse routing.",
+              "maxLength": 14,
+              "propertyName": "addressForReverseRouting",
+              "title": "Address for reverse routing",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "0008"
+              }
+            },
+            "partnerIdentificationCodeQualifier": {
+              "description": "Version number of the syntax identified in the syntax identifier (0001).",
+              "maxLength": 4,
+              "propertyName": "partnerIdentificationCodeQualifier",
+              "title": "Partner Identification Code Qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0007"
+              }
+            },
+            "senderIdentification": {
+              "description": "Name or coded representation of the sender of a data interchange.",
+              "maxLength": 35,
+              "propertyName": "senderIdentification",
+              "title": "Sender Identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0004"
+              }
+            }
+          }
+        },
+        "syntax": {
+          "type": "object",
+          "title": "SYNTAX",
+          "description": "Identification of the agency controlling the syntax and indication of syntax level.",
+          "x-edi": {
+            "type": "component",
+            "order": 1,
+            "ref": "S001"
+          },
+          "properties": {
+            "syntaxIdentifier": {
+              "description": "Coded identification of the agency controlling a syntax and syntax level used in an interchange.",
+              "maxLength": 4,
+              "propertyName": "syntaxIdentifier",
+              "title": "Syntax Identifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0001"
+              }
+            },
+            "syntaxTypeVersionNumber": {
+              "description": "Version number of the syntax identified in the syntax identifier (0001).",
+              "maxLength": 3,
+              "propertyName": "syntaxTypeVersionNumber",
+              "title": "Syntax Type Version Number",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0002"
+              }
+            }
+          }
+        }
+      }
+    },
+    "messageHeader": {
+      "type": "object",
+      "title": "Message Header",
+      "description": "A service segment starting and uniquely identifying a message.",
+      "x-edi": {
+        "type": "segment",
+        "order": 2,
+        "tag": "UNH"
+      },
+      "properties": {
+        "messageReferenceNumber": {
+          "description": "Unique message reference assigned by the sender.",
+          "maxLength": 14,
+          "propertyName": "messageReferenceNumber",
+          "title": "MESSAGE REFERENCE NUMBER",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 1,
+            "ref": "0062"
+          }
+        },
+        "messageIdentifier": {
+          "type": "object",
+          "title": "MESSAGE IDENTIFIER",
+          "description": "Identification of the type, version, etc. of the message being interchanged. ",
+          "x-edi": {
+            "type": "component",
+            "order": 2,
+            "ref": "S009"
+          },
+          "properties": {
+            "messageType": {
+              "description": "Code identifying a type of message and assigned by its controlling agency.",
+              "maxLength": 6,
+              "propertyName": "messageType",
+              "title": "Message type",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0065"
+              }
+            },
+            "messageVersionNumber": {
+              "description": "Version number of a message type.",
+              "maxLength": 3,
+              "propertyName": "messageVersionNumber",
+              "title": "Message version number",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0052"
+              }
+            },
+            "messageReleaseNumber": {
+              "description": "Release number within the current message version number.",
+              "maxLength": 3,
+              "propertyName": "messageReleaseNumber",
+              "title": "Message release number",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "0054"
+              }
+            },
+            "controllingAgencyCoded": {
+              "description": "Code identifying a controlling agency.",
+              "maxLength": 2,
+              "propertyName": "controllingAgencyCoded",
+              "title": "Controlling agency, coded",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 4,
+                "ref": "0051"
+              }
+            },
+            "associationAssignedCode": {
+              "description": "Code, assigned by the association responsible for the design and maintenance of the message type concerned, which further identifies the message.",
+              "maxLength": 6,
+              "propertyName": "associationAssignedCode",
+              "title": "Association assigned code",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 5,
+                "ref": "0057"
+              }
+            }
+          }
+        },
+        "commonAccessReference": {
+          "description": "Reference serving as a key to relate all subsequent transfers of data to the same business case or file.",
+          "maxLength": 35,
+          "propertyName": "commonAccessReference",
+          "title": "COMMON ACCESS REFERENCE",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 3,
+            "ref": "0068"
+          }
+        }
+      }
+    },
+    "beginningOfMessage": {
+      "type": "object",
+      "title": "Beginning Of Message",
+      "description": "A segment to indicate the type and function of the message and to transmit the identifying number.",
+      "x-edi": {
+        "type": "segment",
+        "order": 3,
+        "tag": "BGM"
+      },
+      "properties": {
+        "documentName": {
+          "type": "object",
+          "title": "DOCUMENT NAME",
+          "description": "Identification of a type of document/message by code or name. Code preferred. ",
+          "x-edi": {
+            "type": "component",
+            "order": 1,
+            "ref": "C002"
+          },
+          "properties": {
+            "documentNameCode": {
+              "description": "Code specifying the document name.",
+              "maxLength": 3,
+              "propertyName": "documentNameCode",
+              "title": "Document name code",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "1001"
+              }
+            },
+            "codeListIdentificationCode": {
+              "description": "Code identifying a user or association maintained code list.",
+              "maxLength": 3,
+              "propertyName": "codeListIdentificationCode",
+              "title": "Code list identification code",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "1131"
+              }
+            },
+            "codeListResponsibleAgencyCode": {
+              "description": "Code specifying the agency responsible for a code list.",
+              "maxLength": 3,
+              "propertyName": "codeListResponsibleAgencyCode",
+              "title": "Code list responsible agency code",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "3055"
+              }
+            },
+            "documentName": {
+              "description": "Name of a document: FRC",
+              "maxLength": 35,
+              "propertyName": "documentName",
+              "title": "Document name",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 4,
+                "ref": "1000"
+              }
+            }
+          }
+        },
+        "documentIdentifier": {
+          "description": "Document/Message number. AWP and AWN.",
+          "maxLength": 35,
+          "propertyName": "documentIdentifier",
+          "title": "Document identifier",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 2,
+            "ref": "1004"
+          }
+        },
+        "dateTimePeriod1": {
+          "type": "object",
+          "title": "DATE/TIME/PERIOD",
+          "description": "Date and/or time, or period relevant to the specified date/time/period type. ",
+          "x-edi": {
+            "type": "component",
+            "order": 3,
+            "ref": "C507"
+          },
+          "properties": {
+            "dateOrTimeOrPeriodFunctionCodeQualifier": {
+              "description": "Code qualifying the function of a date, time or period: '97' Transaction creation date.",
+              "maxLength": 3,
+              "propertyName": "dateOrTimeOrPeriodFunctionCodeQualifier",
+              "title": "Date or time or period function code qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "2005"
+              }
+            },
+            "dateOrTimeOrPeriodText": {
+              "description": "The value of a date, a date and time, a time or of a period in a specified representation.",
+              "maxLength": 35,
+              "propertyName": "dateOrTimeOrPeriodText",
+              "title": "Date or time or period text",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "2380"
+              }
+            },
+            "dateOrTimeOrPeriodFormatCode": {
+              "description": "Code specifying the representation of a date, time or period: '201' YYMMDDHHMM",
+              "maxLength": 3,
+              "propertyName": "dateOrTimeOrPeriodFormatCode",
+              "title": "Date or time or period format code",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "2379"
+              }
+            }
+          }
+        },
+        "messageFunctionCode": {
+          "description": "Code indicating the function of the message. Ommited.",
+          "maxLength": 3,
+          "propertyName": "messageFunctionCode",
+          "title": "MESSAGE FUNCTION CODE",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 4,
+            "ref": "1225"
+          }
+        },
+        "reference": {
+          "type": "object",
+          "title": "REFERENCE",
+          "description": "Identification of a reference. ",
+          "x-edi": {
+            "type": "component",
+            "order": 5,
+            "ref": "C506"
+          },
+          "properties": {
+            "referenceCodeQualifier": {
+              "description": "Code qualifying a reference: 'HWB'",
+              "maxLength": 3,
+              "propertyName": "referenceCodeQualifier",
+              "title": "Reference code qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "1153"
+              }
+            },
+            "referenceIdentifier": {
+              "description": "Reference number: House AWB Serial Number.",
+              "maxLength": 35,
+              "propertyName": "referenceIdentifier",
+              "title": "Reference identifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "1154"
+              }
+            },
+            "lineNumber": {
+              "description": "Line number: Customs Clearance Split number.",
+              "maxLength": 6,
+              "propertyName": "lineNumber",
+              "title": "Line Number",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "1156"
+              }
+            }
+          }
+        },
+        "dateTimePeriod2": {
+          "type": "object",
+          "title": "DATE/TIME/PERIOD",
+          "description": "Date and/or time, or period relevant to the specified date/time/period type. ",
+          "x-edi": {
+            "type": "component",
+            "order": 6,
+            "ref": "C507"
+          },
+          "properties": {
+            "dateOrTimeOrPeriodFunctionCodeQualifier": {
+              "description": "Code qualifying the function of a date, time or period: '50' date/time",
+              "maxLength": 3,
+              "propertyName": "dateOrTimeOrPeriodFunctionCodeQualifier",
+              "title": "Date or time or period function code qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "2005"
+              }
+            },
+            "dateOrTimeOrPeriodText": {
+              "description": "The value of a date, a date and time, a time or of a period in a specified representation: Date/time of status 1.",
+              "maxLength": 35,
+              "propertyName": "dateOrTimeOrPeriodText",
+              "title": "Date or time or period text",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "2380"
+              }
+            },
+            "dateOrTimeOrPeriodFormatCode": {
+              "description": "Code specifying the representation of a date, time or period: '201' YYMMDDHHMM",
+              "maxLength": 10,
+              "propertyName": "dateOrTimeOrPeriodFormatCode",
+              "title": "Date or time or period format code",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "2379"
+              }
+            }
+          }
+        },
+        "responseTypeCode": {
+          "description": "Code specifying the type of acknowledgment required or transmitted. Ommited.",
+          "maxLength": 3,
+          "propertyName": "responseTypeCode",
+          "title": "RESPONSE TYPE CODE",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 7,
+            "ref": "4343"
+          }
+        }
+      }
+    },
+    "generalIndicator1": {
+      "type": "object",
+      "title": "General Indicator",
+      "description": "A segment to indicate the processing indicator.",
+      "x-edi": {
+        "type": "segment",
+        "order": 4,
+        "tag": "GIS"
+      },
+      "properties": {
+        "processingIndicator": {
+          "type": "object",
+          "title": "DOCUMENT/MESSAGE NAME",
+          "description": "Processing indicator",
+          "x-edi": {
+            "type": "component",
+            "order": 1,
+            "ref": "C529"
+          },
+          "properties": {
+            "processingIndicatorCoded": {
+              "description": "Processing indicator code: 'S2Y' if Status 2 granted or 'S2N' if Status 2 revoked",
+              "maxLength": 3,
+              "propertyName": "processingIndicatorCoded",
+              "title": "Processing Indicator Coded",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "7365"
+              }
+            }
+          }
+        }
+      }
+    },
+    "generalIndicator2": {
+      "type": "object",
+      "title": "General Indicator",
+      "description": "A segment to indicate the processing indicator.",
+      "x-edi": {
+        "type": "segment",
+        "order": 5,
+        "tag": "GIS"
+      },
+      "properties": {
+        "processingIndicator": {
+          "type": "object",
+          "title": "DOCUMENT/MESSAGE NAME",
+          "description": "Processing indicator",
+          "x-edi": {
+            "type": "component",
+            "order": 1,
+            "ref": "C529"
+          },
+          "properties": {
+            "processingIndicatorCoded": {
+              "description": "Processing indicator code: Shipment description code (T,M,C or E).",
+              "maxLength": 3,
+              "propertyName": "processingIndicatorCoded",
+              "title": "Processing Indicator Coded",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "7365"
+              }
+            },
+            "codeListQualifier": {
+              "description": "Code list qualifier: '121' Shipment description",
+              "maxLength": 3,
+              "propertyName": "codeListQualifier",
+              "title": "Code list qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "1131"
+              }
+            }
+          }
+        }
+      }
+    },
+    "generalIndicator3": {
+      "type": "object",
+      "title": "General Indicator",
+      "description": "A segment to indicate the processing indicator.",
+      "x-edi": {
+        "type": "segment",
+        "order": 6,
+        "tag": "GIS"
+      },
+      "properties": {
+        "processingIndicator": {
+          "type": "object",
+          "title": "DOCUMENT/MESSAGE NAME",
+          "description": "Processing indicator",
+          "x-edi": {
+            "type": "component",
+            "order": 1,
+            "ref": "C529"
+          },
+          "properties": {
+            "processingIndicatorCoded": {
+              "description": "Processing indicator code: Community Handling Code.",
+              "maxLength": 3,
+              "propertyName": "processingIndicatorCoded",
+              "title": "Processing Indicator Coded",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "7365"
+              }
+            },
+            "codeListQualifier": {
+              "description": "Code list qualifier: '131' special handling procedures.",
+              "maxLength": 3,
+              "propertyName": "codeListQualifier",
+              "title": "Code list qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "1131"
+              }
+            }
+          }
+        }
+      }
+    },
+    "detailsOfTransport": {
+      "type": "object",
+      "title": "Details of Transport",
+      "description": "A segment to indicate the details of the transport.",
+      "x-edi": {
+        "type": "segment",
+        "order": 7,
+        "tag": "TDT"
+      },
+      "properties": {
+        "transportStageQualifier": {
+          "description": "Transport stage qualifier: '20' Main-carriage Transport",
+          "maxLength": 3,
+          "propertyName": "transportStageQualifier",
+          "title": "Transport Stage Qualifier",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 1,
+            "ref": "8051"
+          }
+        },
+        "conveyanceReferenceNumber": {
+          "description": "Conveyance Reference Number: Flight Number",
+          "maxLength": 17,
+          "propertyName": "conveyanceReferenceNumber",
+          "title": "Conveyance Reference Number",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 2,
+            "ref": "8028"
+          }
+        },
+        "modeOfTransport": {
+          "description": "Mode of transport. Ommited.",
+          "maxLength": 3,
+          "propertyName": "modeOfTransport",
+          "title": "Mode of Transport",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 3,
+            "ref": "C220"
+          }
+        },
+        "transportIdentification": {
+          "description": "Transport identification. Ommited.",
+          "maxLength": 3,
+          "propertyName": "transportIdentification",
+          "title": "Transport Identification",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 4,
+            "ref": "C222"
+          }
+        },
+        "transportMeans": {
+          "description": "Transport means. Ommited.",
+          "maxLength": 3,
+          "propertyName": "transportMeans",
+          "title": "Transport Means",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 5,
+            "ref": "C228"
+          }
+        },
+        "carrier": {
+          "type": "object",
+          "title": "DOCUMENT/MESSAGE NAME",
+          "description": "Carrier details",
+          "x-edi": {
+            "type": "component",
+            "order": 6,
+            "ref": "C040"
+          },
+          "properties": {
+            "carrierIdentification": {
+              "description": "Carrier identification: carrier code.",
+              "maxLength": 17,
+              "propertyName": "carrierIdentification",
+              "title": "Carrier Identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "3127"
+              }
+            },
+            "codeListQualifier": {
+              "description": "Code list qualifier: '172' Carrier code.",
+              "maxLength": 3,
+              "propertyName": "codeListQualifier",
+              "title": "Code List Qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "1131"
+              }
+            },
+            "codeListResponsibleAgency": {
+              "description": "Code list responsible agency coded: '3' IATA.",
+              "maxLength": 3,
+              "propertyName": "codeListResponsibleAgency",
+              "title": "Code List Responsible Agency Coded",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "3055"
+              }
+            }
+          }
+        },
+        "transportDirectionCoded": {
+          "description": "Transport direction coded. Ommited.",
+          "maxLength": 3,
+          "propertyName": "transportDirectionCoded",
+          "title": "Transport Direction Coded",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 7,
+            "ref": "8101"
+          }
+        },
+        "dateTimePeriod": {
+          "type": "object",
+          "title": "DATE/TIME/PERIOD",
+          "description": "Date and/or time, or period relevant to the specified date/time/period type. ",
+          "x-edi": {
+            "type": "component",
+            "order": 8,
+            "ref": "C507"
+          },
+          "properties": {
+            "dateOrTimeOrPeriodFunctionCodeQualifier": {
+              "description": "Code qualifying the function of a date, time or period: '178' Arrival date/time actual.",
+              "maxLength": 3,
+              "propertyName": "dateOrTimeOrPeriodFunctionCodeQualifier",
+              "title": "Date or time or period function code qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "2005"
+              }
+            },
+            "dateOrTimeOrPeriodText": {
+              "description": "The value of a date, a date and time, a time or of a period in a specified representation: Year, Month & Day of Arrival.",
+              "maxLength": 35,
+              "propertyName": "dateOrTimeOrPeriodText",
+              "title": "Date or time or period text",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "2380"
+              }
+            },
+            "dateOrTimeOrPeriodFormatCode": {
+              "description": "Code specifying the representation of a date, time or period: '101' YYMMDD.",
+              "maxLength": 3,
+              "propertyName": "dateOrTimeOrPeriodFormatCode",
+              "title": "Date or time or period format code",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "2379"
+              }
+            }
+          }
+        }
+      }
+    },
+    "placeIdentification": {
+      "type": "object",
+      "title": "Name And Address",
+      "description": "A segment to specify the place and location of the goods.",
+      "x-edi": {
+        "type": "segment",
+        "order": 8,
+        "tag": "LOC"
+      },
+      "properties": {
+        "locationIdentificationDischargePort": {
+          "type": "object",
+          "title": "Location Identification of Discharge Port",
+          "description": "Location identification of Discharge Port",
+          "x-edi": {
+            "type": "component",
+            "order": 1,
+            "ref": "C517"
+          },
+          "properties": {
+            "placeLocationQualifier": {
+              "description": "Place/location qualifier: '11' Place/Port of discharge",
+              "maxLength": 3,
+              "propertyName": "placeLocationQualifier",
+              "title": "Place/location qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "3227"
+              }
+            },
+            "placeLocationIdentification": {
+              "description": "Place/location identification: Airport of arrival code.",
+              "maxLength": 25,
+              "propertyName": "placeLocationIdentification",
+              "title": "Place/location identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "3225"
+              }
+            },
+            "codeListQualifierAirport": {
+              "description": "Code specifying the identity of a party: '145' Airport/City code",
+              "maxLength": 3,
+              "propertyName": "codeListQualifierAirport",
+              "title": "Code list identifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "1131"
+              }
+            },
+            "codeListResponsibleAgencyCoded": {
+              "description": "Code list responsible agency coded: '3' IATA",
+              "maxLength": 3,
+              "propertyName": "codeListResponsibleAgencyCoded",
+              "title": "Code List Responsible Agency Coded",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 4,
+                "ref": "3055"
+              }
+            },
+            "placeLocation": {
+              "description": "Place/location. Ommited.",
+              "maxLength": 3,
+              "propertyName": "placeLocation",
+              "title": "Place/location",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 5,
+                "ref": "3224"
+              }
+            },
+            "subLocationIdentification": {
+              "description": "Sub location identification: Cargo Terminal Operator ID",
+              "maxLength": 17,
+              "propertyName": "subLocationIdentification",
+              "title": "Sub location identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 6,
+                "ref": "3439"
+              }
+            },
+            "codeListQualifier": {
+              "description": "Code list qualifier: '129' Customs Warehouse.",
+              "maxLength": 3,
+              "propertyName": "codeListQualifier",
+              "title": "Code List Qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 7,
+                "ref": "1131"
+              }
+            },
+            "codeListResponsibleAgencyCodedWarehouse": {
+              "description": "Code list responsible agency coded: 'ZZZ' Mutually defined.",
+              "maxLength": 3,
+              "propertyName": "codeListResponsibleAgencyCodedWarehouse",
+              "title": "Code List Responsible Agency Coded",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 8,
+                "ref": "3055"
+              }
+            }
+          }
+        },
+        "locationIdentificationPlaceOfAcceptance": {
+          "type": "object",
+          "title": "Location Identification Place of Acceptance",
+          "description": "Location Identification Place of Acceptance",
+          "x-edi": {
+            "type": "component",
+            "order": 2,
+            "ref": "C517"
+          },
+          "properties": {
+            "placeLocationQualifier": {
+              "description": "Place/location qualifier: '84' Transport Contract Place.",
+              "maxLength": 3,
+              "propertyName": "placeLocationQualifier",
+              "title": "Place/location Qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "3227"
+              }
+            },
+            "placeLocationIdentification": {
+              "description": "Place/location Identification: Airport/City of origin code",
+              "maxLength": 25,
+              "propertyName": "placeLocationIdentification",
+              "title": "Place/location Identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "3225"
+              }
+            },
+            "codeListQualifier": {
+              "description": "Code list qualifier: '145' Airport/city code.",
+              "maxLength": 3,
+              "propertyName": "codeListQualifier",
+              "title": "Code List Qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "1131"
+              }
+            },
+            "codeListResponsibleAgencyCoded": {
+              "description": "Code list responsible agency coded: '3' IATA.",
+              "maxLength": 3,
+              "propertyName": "codeListResponsibleAgencyCoded",
+              "title": "Code List Responsible Agency Coded",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 4,
+                "ref": "3055"
+              }
+            }
+          }
+        },
+        "locationIdentificationPlaceOfDestination": {
+          "type": "object",
+          "title": "PARTY IDENTIFICATION DETAILS",
+          "description": "Identification of a transaction party by code. ",
+          "x-edi": {
+            "type": "component",
+            "order": 3,
+            "ref": "C517"
+          },
+          "properties": {
+            "placeLocationQualifier": {
+              "description": "Place/location qualifier: '85' Transport Contract place of destination",
+              "maxLength": 3,
+              "propertyName": "placeLocationQualifier",
+              "title": "Place/location qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "3227"
+              }
+            },
+            "placeLocationIdentification": {
+              "description": "Place/location identification: Airport of destination code.",
+              "maxLength": 25,
+              "propertyName": "placeLocationIdentification",
+              "title": "Place/location identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "3225"
+              }
+            },
+            "codeListQualifierAirport": {
+              "description": "Code specifying the identity of a party: '145' Airport/City code",
+              "maxLength": 3,
+              "propertyName": "codeListQualifierAirport",
+              "title": "Code list identifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 3,
+                "ref": "1131"
+              }
+            },
+            "codeListResponsibleAgencyCoded": {
+              "description": "Code list responsible agency coded: '3' IATA",
+              "maxLength": 3,
+              "propertyName": "codeListResponsibleAgencyCoded",
+              "title": "Code List Responsible Agency Coded",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 4,
+                "ref": "3055"
+              }
+            },
+            "placeLocation": {
+              "description": "Place/location. Ommited.",
+              "maxLength": 3,
+              "propertyName": "placeLocation",
+              "title": "Place/location",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 5,
+                "ref": "3224"
+              }
+            },
+            "subLocationIdentification": {
+              "description": "Sub location identification: Cargo Terminal Operator ID",
+              "maxLength": 17,
+              "propertyName": "subLocationIdentification",
+              "title": "Sub location identification",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 6,
+                "ref": "3439"
+              }
+            },
+            "codeListQualifier": {
+              "description": "Code list qualifier: '129' Customs Warehouse.",
+              "maxLength": 3,
+              "propertyName": "codeListQualifier",
+              "title": "Code List Qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 7,
+                "ref": "1131"
+              }
+            },
+            "codeListResponsibleAgencyCodedWarehouse": {
+              "description": "Code list responsible agency coded: 'ZZZ' Mutually defined.",
+              "maxLength": 3,
+              "propertyName": "codeListResponsibleAgencyCodedWarehouse",
+              "title": "Code List Responsible Agency Coded",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 8,
+                "ref": "3055"
+              }
+            }
+          }
+        }
+      }
+    },
+    "nameAndAddress": {
+      "type": "object",
+      "title": "Name And Address",
+      "description": "A segment to specify the name and address of the customs broker.",
+      "x-edi": {
+        "type": "segment",
+        "order": 9,
+        "tag": "NAD"
+      },
+      "properties": {
+        "partyFunctionCodeQualifier": {
+          "description": "Code giving specific meaning to a party: 'CB' Customs Broker.",
+          "maxLength": 3,
+          "propertyName": "partyFunctionCodeQualifier",
+          "title": "Party Qualifier",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 1,
+            "ref": "3035"
+          }
+        },
+        "partyIdentificationDetails": {
+          "type": "object",
+          "title": "Party Identification Details",
+          "description": "Identification of a transaction party by code.",
+          "x-edi": {
+            "type": "component",
+            "order": 2,
+            "ref": "C082"
+          },
+          "properties": {
+            "partyIdentifier": {
+              "description": "Code specifying the identity of a party: Broker/Consolidator code",
+              "maxLength": 17,
+              "propertyName": "partyIdentifier",
+              "title": "Party identifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "3039"
+              }
+            }
+          }
+        }
+      }
+    },
+    "measurements": {
+      "type": "object",
+      "title": "Measurements",
+      "description": "A segment to indicate the processing indicator.",
+      "x-edi": {
+        "type": "segment",
+        "order": 10,
+        "tag": "MEA"
+      },
+      "properties": {
+        "measurementApplicationQualifier": {
+          "description": "Measurement Application Qualifier: 'WT' weight.",
+          "maxLength": 3,
+          "propertyName": "measurementApplicationQualifier",
+          "title": "Measurement Application Qualifier",
+          "type": "string",
+          "x-edi": {
+            "type": "component",
+            "order": 1,
+            "ref": "6311"
+          }
+        },
+        "measurementDetails": {
+          "type": "object",
+          "title": "Measurement Details",
+          "description": "Measurement Details. Ommited.",
+          "x-edi": {
+            "type": "component",
+            "order": 2,
+            "ref": "C502"
+          },
+          "properties": {}
+        },
+        "valueRange": {
+          "type": "object",
+          "title": "Value/Range",
+          "description": "Value/Range",
+          "x-edi": {
+            "type": "component",
+            "order": 3,
+            "ref": "C174"
+          },
+          "properties": {
+            "measurementUnitQualifier": {
+              "description": "Measurement unit qualifier: 'KGM' Weight Code",
+              "maxLength": 3,
+              "propertyName": "measurementUnitQualifier",
+              "title": "Measurement Unit Qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "6411"
+              }
+            },
+            "measurementValue": {
+              "description": "Measurement value: Weight (gross).",
+              "max": 1000000000000000000,
+              "propertyName": "measurementValue",
+              "title": "Measurement Value",
+              "type": "number",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "6314"
+              }
+            }
+          }
+        }
+      }
+    },
+    "reference": {
+      "type": "object",
+      "title": "Reference",
+      "description": " A segment to indicate the reference number of the document/message.",
+      "x-edi": {
+        "type": "segment",
+        "order": 11,
+        "tag": "RFF"
+      },
+      "properties": {
+        "reference": {
+          "type": "object",
+          "title": "Reference",
+          "description": "Identification of a reference.",
+          "x-edi": {
+            "type": "component",
+            "order": 1,
+            "ref": "C506"
+          },
+          "properties": {
+            "referenceCodeQualifier": {
+              "description": "Code qualifying a reference: 'HS' Harmonised System Number.",
+              "maxLength": 3,
+              "propertyName": "referenceCodeQualifier",
+              "title": "Reference code qualifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "1153"
+              }
+            },
+            "referenceIdentifier": {
+              "description": "Identifies a reference: Harmonised Commodity Code.",
+              "maxLength": 35,
+              "propertyName": "referenceIdentifier",
+              "title": "Reference identifier",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "1154"
+              }
+            }
+          }
+        }
+      }
+    },
+    "messageTrailer": {
+      "type": "object",
+      "title": "Message Trailer",
+      "description": " A service segment ending a message, giving the total number of segments in the message (including the UNH & UNT) and the control reference number of the message.",
+      "x-edi": {
+        "type": "segment",
+        "order": 12,
+        "tag": "UNT"
+      },
+      "properties": {
+        "numberOfSegmentsInAMessage": {
+          "description": "The number of segments in a message body, plus the message header segment and message trailer segment.",
+          "max": 999999,
+          "propertyName": "numberOfSegmentsInAMessage",
+          "title": "Number of Segments in a Message",
+          "type": "number",
+          "x-edi": {
+            "type": "element",
+            "order": 1,
+            "ref": "0074"
+          }
+        },
+        "messageReferenceNumber": {
+          "description": "Unique message reference assigned by the sender: identical to 0062 in UNH.",
+          "maxLength": 14,
+          "propertyName": "messageReferenceNumber",
+          "title": "Message Reference Number",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 2,
+            "ref": "0062"
+          }
+        }
+      }
+    },
+    "interchangeTrailer": {
+      "type": "object",
+      "title": "Interchange Trailer",
+      "description": "Close of the Interchange message.",
+      "x-edi": {
+        "type": "segment",
+        "order": 13,
+        "tag": "UNZ"
+      },
+      "properties": {
+        "interchangeControlCount": {
+          "description": "Count either of the number of messages or, if used, of the number of functional groups in an interchange.",
+          "max": 9999999999,
+          "propertyName": "interchangeControlCount",
+          "title": "Interchange Control Count",
+          "type": "number",
+          "x-edi": {
+            "type": "element",
+            "order": 1,
+            "ref": "0036"
+          }
+        },
+        "interchangeControlReference": {
+          "description": "Unique reference assigned by the sender to an interchange.",
+          "maxLength": 14,
+          "propertyName": "interchangeControlReference",
+          "title": "Interchange Control Reference",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 2,
+            "ref": "0020"
+          }
+        }
+      }
+    }
+  }
+}
