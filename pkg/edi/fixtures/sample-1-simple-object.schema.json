@@ -1,0 +1,87 @@
+{
+  "$schema": "../../../edi-marshaller-schema.json",
+  "description": "Unit Control Function",
+  "isRequired": false,
+  "properties": {
+    "foo" : {
+      "type": "object",
+      "x-edi": {
+        "type": "segment",
+        "order": 2,
+        "tag": "FOO"
+      },
+      "properties": {
+        "applicationRecipient": {
+          "description": "APPLICATION RECIPIENT.",
+          "x-edi": {
+            "type": "component",
+            "order": 2,
+            "ref": "S007"
+          },
+          "properties": {
+            "identification": {
+              "description": "Identification.",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "0044"
+              },
+              "maxLength": 35,
+              "title": "Application recipient identification",
+              "type": "string"
+            },
+            "identificationCodeQualifier": {
+              "description": "Identification code qualifier.",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "0007"
+              },
+              "maxLength": 4,
+              "title": "Identification code qualifier",
+              "type": "string"
+            }
+          },
+          "required": [
+            "identification"
+          ],
+          "title": "APPLICATION RECIPIENT",
+          "type": "object"
+        },
+        "actionCoded": {
+          "description": "Action coded.",
+          "x-edi": {
+            "type": "element",
+            "order": 1,
+            "ref": "0083"
+          },
+          "maxLength": 3,
+          "title": "Action coded",
+          "type": "string"
+        }
+      }
+    },
+    "bar" : {
+      "type": "object",
+      "x-edi": {
+        "type": "segment",
+        "order": 1,
+        "tag": "BAR"
+      },
+      "properties": {
+        "actionCoded": {
+          "description": "Action coded.",
+          "x-edi": {
+            "type": "element",
+            "order": 1,
+            "ref": "0083"
+          },
+          "isRequired": true,
+          "maxLength": 3,
+          "title": "Action coded",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

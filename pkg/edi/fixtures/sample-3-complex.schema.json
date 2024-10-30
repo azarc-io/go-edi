@@ -1,0 +1,242 @@
+{
+  "$schema": "../../../edi-marshaller-schema.json",
+  "description": "Unit Control Function",
+  "isRequired": false,
+  "properties": {
+    "welcome": {
+      "type": "object",
+      "x-edi": {
+        "order": 1
+      },
+      "properties": {
+        "clientDetails": {
+          "type": "object",
+          "title": "Client Details",
+          "x-edi": {
+            "type": "segment",
+            "order": 1,
+            "tag": "NAD"
+          },
+          "properties": {
+            "name": {
+              "description": "Name.",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "S001"
+              },
+              "title": "Name",
+              "type": "string"
+            },
+            "address": {
+              "type": "object",
+              "title": "Address",
+              "description": "Address.",
+              "x-edi": {
+                "type": "component",
+                "order": 2,
+                "ref": "S007"
+              },
+              "properties": {
+                "line1": {
+                  "description": "Line1.",
+                  "x-edi": {
+                    "type": "element",
+                    "order": 1,
+                    "ref": "0044"
+                  },
+                  "title": "Line1",
+                  "type": "string"
+                },
+                "line2": {
+                  "description": "Line2.",
+                  "x-edi": {
+                    "type": "element",
+                    "order": 2,
+                    "ref": "0045"
+                  },
+                  "title": "Line2",
+                  "type": "string"
+                },
+                "postcode": {
+                  "description": "Postcode.",
+                  "x-edi": {
+                    "type": "element",
+                    "order": 3,
+                    "ref": "0046"
+                  },
+                  "title": "Postcode",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "line1",
+                "postcode"
+              ]
+            }
+          }
+        },
+        "users": {
+          "type": "array",
+          "title": "Users",
+          "x-edi": {
+            "order": 2
+          },
+          "items": {
+            "type": "object",
+            "x-edi": {
+              "type": "segment",
+              "order": 1,
+              "tag": "USR"
+            },
+            "properties": {
+              "firstName": {
+                "description": "First Name",
+                "x-edi": {
+                  "type": "element",
+                  "order": 1,
+                  "ref": "S001"
+                },
+                "title": "First Name",
+                "type": "string"
+              },
+              "lastName": {
+                "description": "Last Name",
+                "x-edi": {
+                  "type": "element",
+                  "order": 2,
+                  "ref": "S001"
+                },
+                "title": "Last Name",
+                "type": "string"
+              },
+              "emails": {
+                "type": "array",
+                "title": "Emails",
+                "x-edi": {
+                  "order": 3
+                },
+                "items": {
+                  "type": "object",
+                  "x-edi": {
+                    "type": "segment",
+                    "order": 1,
+                    "tag": "EML"
+                  },
+                  "properties": {
+                    "email": {
+                      "description": "Email",
+                      "x-edi": {
+                        "type": "element",
+                        "order": 1,
+                        "ref": "S001"
+                      },
+                      "title": "Email",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "accountDetails": {
+          "type": "object",
+          "x-edi": {
+            "order": 3
+          },
+          "properties": {
+            "my-string": {
+              "type": "string",
+              "const": "my-value"
+            },
+            "my-int":  {
+              "type": "integer",
+              "const": 12
+            },
+            "my-number":  {
+              "type": "number",
+              "const": 87.23
+            },
+            "my-bool":  {
+              "type": "boolean",
+              "const": true
+            }
+          }
+        }
+      }
+    },
+    "foo" : {
+      "type": "array",
+      "x-edi": {
+        "order": 3
+      },
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "x-edi": {
+          "type": "segment",
+          "order": 1,
+          "tag": "FOO"
+        },
+        "properties": {
+          "actionCoded": {
+            "description": "Action coded.",
+            "x-edi": {
+              "type": "element",
+              "order": 1,
+              "ref": "0083"
+            },
+            "maxLength": 3,
+            "title": "Action coded",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "bar" : {
+      "type": "object",
+      "x-edi": {
+        "type": "segment",
+        "order": 2,
+        "tag": "BAR"
+      },
+      "properties": {
+        "actionCoded": {
+          "description": "Action coded.",
+          "x-edi": {
+            "type": "element",
+            "order": 1,
+            "ref": "0083"
+          },
+          "isRequired": true,
+          "maxLength": 3,
+          "title": "Action coded",
+          "type": "string"
+        }
+      }
+    },
+    "foo-next" : {
+      "type": "object",
+      "x-edi": {
+        "type": "segment",
+        "order": 4,
+        "tag": "FOO"
+      },
+      "properties": {
+        "actionCoded": {
+          "description": "Action coded.",
+          "x-edi": {
+            "type": "element",
+            "order": 1,
+            "ref": "0083"
+          },
+          "isRequired": true,
+          "maxLength": 3,
+          "title": "Action coded",
+          "type": "string"
+        }
+      }
+    }
+  }
+}
