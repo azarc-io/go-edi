@@ -1,0 +1,95 @@
+{
+  "interchangeHeader": {
+    "dateAndTimeOfPreparation": {
+      "dateOfPreparation": "210720",
+      "timeOfPreparation": "0912"
+    },
+    "interchangeControlReference": "102C9091221000",
+    "interchangeRecipient": {
+      "addressForReverseRouting": "BCTCIFZ",
+      "partnerIdentificationCodeQualifier": "IATA",
+      "recipientIdentification": "CUKFFW98000MET"
+    },
+    "interchangeSender": {
+      "partnerIdentificationCodeQualifier": "IATA",
+      "senderIdentification": "CUKCTM98CHFIMP"
+    },
+    "syntax": {
+      "syntaxIdentifier": "UNOA",
+      "syntaxTypeVersionNumber": "2"
+    }
+  },
+  "interchangeResponse": {
+    "actionCoded": "4",
+    "interchangeControlReference": "DTICHIEFEDI",
+    "interchangeRecipient": {
+      "interchangeRecipientIdentification": "CHIEF"
+    },
+    "interchangeSender": {
+      "interchangeSenderIdentification": "CUK98000MET"
+    }
+  },
+  "interchangeTrailer": {
+    "interchangeControlCount": 1,
+    "interchangeControlReference": "102C9091221000"
+  },
+  "messageHeader": {
+    "commonAccessReference": "318LOC20210720091220964",
+    "messageIdentifier": {
+      "controllingAgencyCoded": "UN",
+      "messageReleaseNumber": "1",
+      "messageType": "CONTRL",
+      "messageVersionNumber": "4"
+    },
+    "messageReferenceNumber": "13112431404141"
+  },
+  "messageResponses": [
+    {
+      "messagePackageResponse": {
+        "actionCoded": "4",
+        "messageIdentifier": {
+          "associationAssignedCode": "109700",
+          "controllingAgencyCoded": "UN",
+          "messageReleaseNumber": "04A",
+          "messageType": "CUSDEC",
+          "messageVersionNumber": "D"
+        },
+        "messageReferenceNumber": "BCTCIFZ"
+      },
+      "responseDetailItems": [
+        {
+          "dataElementErrorIndicationsItems": [
+            {
+              "dataElementIdentification": {
+                "erroneousComponentDataElementPosition": 1,
+                "erroneousDataElementPositionInSegment": 3
+              },
+              "syntaxErrorCoded": "10"
+            }
+          ],
+          "segmentErrorIndication": {
+            "segmentPositionInMessageBody": 5
+          }
+        },
+        {
+          "dataElementErrorIndicationsItems": [
+            {
+              "dataElementIdentification": {
+                "erroneousComponentDataElementPosition": 1,
+                "erroneousDataElementPositionInSegment": 4
+              },
+              "syntaxErrorCoded": "10"
+            }
+          ],
+          "segmentErrorIndication": {
+            "segmentPositionInMessageBody": 17
+          }
+        }
+      ]
+    }
+  ],
+  "messageTrailer": {
+    "messageReferenceNumber": "13112431404141",
+    "numberOfSegmentsInAMessage": 8
+  }
+}

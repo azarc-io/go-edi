@@ -1,0 +1,62 @@
+{
+  "beginningOfMessage": {
+    "dateTimePeriod1": {
+      "dateOrTimeOrPeriodFormatCode": "201",
+      "dateOrTimeOrPeriodFunctionCodeQualifier": "97",
+      "dateOrTimeOrPeriodText": "240606071"
+    },
+    "documentIdentifier": "00223456789",
+    "documentName": {
+      "documentName": "FRC"
+    },
+    "reference": {
+      "lineNumber": "01",
+      "referenceCodeQualifier": "HWB",
+      "referenceIdentifier": "59500189"
+    }
+  },
+  "detailsOfTransport": {
+    "transportStageQualifier": "20"
+  },
+  "interchangeHeader": {
+    "dateAndTimeOfPreparation": {
+      "dateOfPreparation": "240606",
+      "timeOfPreparation": "0933"
+    },
+    "interchangeControlReference": "1236439",
+    "interchangeRecipient": {
+      "partnerIdentificationCodeQualifier": "IATA",
+      "recipientIdentification": "CUKFFW98000GBF"
+    },
+    "interchangeSender": {
+      "partnerIdentificationCodeQualifier": "IATA",
+      "senderIdentification": "CUKSYS98COMMDB"
+    },
+    "syntax": {
+      "syntaxIdentifier": "UNOA",
+      "syntaxTypeVersionNumber": "2"
+    }
+  },
+  "messageHeader": {
+    "commonAccessReference": "1236439",
+    "messageIdentifier": {
+      "associationAssignedCode": "109503",
+      "controllingAgencyCoded": "UN",
+      "messageReleaseNumber": "912",
+      "messageType": "CUSCAR",
+      "messageVersionNumber": "2"
+    },
+    "messageReferenceNumber": "1236439"
+  },
+  "placeIdentification": {
+    "locationIdentificationDischargePort": {
+      "codeListQualifier": "129",
+      "codeListQualifierAirport": "145",
+      "codeListResponsibleAgencyCoded": "3",
+      "codeListResponsibleAgencyCodedWarehouse": "ZZZ",
+      "placeLocationIdentification": "LHR",
+      "placeLocationQualifier": "11",
+      "subLocationIdentification": "AAA"
+    }
+  }
+}

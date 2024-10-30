@@ -1,0 +1,75 @@
+{
+  "interchangeHeader": {
+    "dateAndTimeOfPreparation": {
+      "dateOfPreparation": "210624",
+      "timeOfPreparation": "0844"
+    },
+    "interchangeControlReference": "00248084414002",
+    "interchangeRecipient": {
+      "addressForReverseRouting": "VTH1621978080",
+      "partnerIdentificationCodeQualifier": "IATA",
+      "recipientIdentification": "CUKFFW98000MET"
+    },
+    "interchangeSender": {
+      "partnerIdentificationCodeQualifier": "IATA",
+      "senderIdentification": "CSGCCS98CCSCUK"
+    },
+    "syntax": {
+      "syntaxIdentifier": "UNOA",
+      "syntaxTypeVersionNumber": "2"
+    }
+  },
+  "interchangeResponse": {
+    "actionCoded": "1",
+    "interchangeControlReference": "CUKFFW98000MET",
+    "interchangeRecipient": {
+      "interchangeRecipientIdentification": "VTH1621978080"
+    },
+    "interchangeSender": {
+      "identificationCodeQualifier": "IATA",
+      "interchangeSenderIdentification": "CUKCTM98CHFIMP"
+    }
+  },
+  "interchangeTrailer": {
+    "interchangeControlCount": 1,
+    "interchangeControlReference": "00248084414002"
+  },
+  "messageHeader": {
+    "messageIdentifier": {
+      "controllingAgencyCoded": "UN",
+      "messageReleaseNumber": "912",
+      "messageType": "CONTRL",
+      "messageVersionNumber": "1"
+    },
+    "messageReferenceNumber": "00505084414000"
+  },
+  "messageResponses": [
+    {
+      "freeTextItems": [
+        {
+          "textLiteral": {
+            "freeText_1": "MESSAGE STORED FOR LATER TRANSMISSION."
+          },
+          "textSubjectCodeQualifier": "AAA"
+        }
+      ],
+      "messageLevelActionAndErrorCodes": {
+        "actionCoded": "1"
+      },
+      "messagePackageResponse": {
+        "messageIdentifier": {
+          "associationAssignedCode": "IATA01",
+          "controllingAgencyCoded": "UN",
+          "messageReleaseNumber": "04A",
+          "messageType": "CUSDEC",
+          "messageVersionNumber": "D"
+        },
+        "messageReferenceNumber": "VTH1621978080"
+      }
+    }
+  ],
+  "messageTrailer": {
+    "messageReferenceNumber": "00505084414000",
+    "numberOfSegmentsInAMessage": 6
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "beginningOfMessage": {
+    "dateTimePeriod1": {
+      "dateOrTimeOrPeriodFormatCode": "201",
+      "dateOrTimeOrPeriodFunctionCodeQualifier": "97",
+      "dateOrTimeOrPeriodText": "2406060933"
+    },
+    "documentIdentifier": "00223456789",
+    "documentName": {
+      "documentName": "FRI"
+    }
+  },
+  "detailsOfTransport": {
+    "carrier": {
+      "carrierIdentification": "QA",
+      "codeListQualifier": "172",
+      "codeListResponsibleAgency": "3"
+    },
+    "conveyanceReferenceNumber": "123",
+    "transportStageQualifier": "20"
+  },
+  "freeTextItems": [
+    {
+      "textLiteral": {
+        "freeText": "CAR PARTS"
+      },
+      "textSubjectCodeQualifier": "AAA"
+    }
+  ],
+  "generalIndicator1": {
+    "processingIndicator": {
+      "processingIndicatorCoded": "S2Y"
+    }
+  },
+  "generalIndicator2": {
+    "processingIndicator": {
+      "codeListQualifier": "121",
+      "processingIndicatorCoded": "T"
+    }
+  },
+  "interchangeHeader": {
+    "dateAndTimeOfPreparation": {
+      "dateOfPreparation": "240606",
+      "timeOfPreparation": "0933"
+    },
+    "interchangeControlReference": "AZA006271444",
+    "interchangeRecipient": {
+      "partnerIdentificationCodeQualifier": "IATA",
+      "recipientIdentification": "CUKFFW98000GBF"
+    },
+    "interchangeSender": {
+      "addressForReverseRouting": "AZA006271444",
+      "partnerIdentificationCodeQualifier": "IATA",
+      "senderIdentification": "CUKAIR98COMMDB"
+    },
+    "syntax": {
+      "syntaxIdentifier": "UNOA",
+      "syntaxTypeVersionNumber": "2"
+    }
+  },
+  "interchangeTrailer": {
+    "interchangeControlCount": 1,
+    "interchangeControlReference": "AZA006271444"
+  },
+  "measurements": {
+    "valueRange": {
+      "measurementUnitQualifier": "KGM",
+      "measurementValue": 100
+    }
+  },
+  "messageHeader": {
+    "commonAccessReference": "0KKBKJEY",
+    "messageIdentifier": {
+      "associationAssignedCode": "109502",
+      "controllingAgencyCoded": "UN",
+      "messageReleaseNumber": "912",
+      "messageType": "CUSCAR",
+      "messageVersionNumber": "3"
+    },
+    "messageReferenceNumber": "AZA006271444"
+  },
+  "messageTrailer": {
+    "messageReferenceNumber": "AZA006271444",
+    "numberOfSegmentsInAMessage": 12
+  },
+  "nameAndAddress": {
+    "partyFunctionCodeQualifier": "CB",
+    "partyIdentificationDetails": {
+      "partyIdentifier": "GBF"
+    }
+  },
+  "placeIdentification": {
+    "locationIdentificationDischargePort": {
+      "codeListQualifier": "129",
+      "codeListQualifierAirport": "145",
+      "codeListResponsibleAgencyCoded": "3",
+      "codeListResponsibleAgencyCodedWarehouse": "ZZZ",
+      "placeLocationIdentification": "LHR",
+      "placeLocationQualifier": "11",
+      "subLocationIdentification": "AAA"
+    },
+    "locationIdentificationPlaceOfAcceptance": {
+      "codeListQualifier": "145",
+      "codeListResponsibleAgencyCoded": "3",
+      "placeLocationIdentification": "SYD",
+      "placeLocationQualifier": "84"
+    },
+    "locationIdentificationPlaceOfDestination": {
+      "codeListQualifierAirport": "145",
+      "codeListResponsibleAgencyCoded": "3",
+      "placeLocationIdentification": "LHR",
+      "placeLocationQualifier": "85"
+    }
+  },
+  "quantityManifested": {
+    "quantityDetails": {
+      "quantity": 10,
+      "quantityQualifier": "118"
+    }
+  }
+}
