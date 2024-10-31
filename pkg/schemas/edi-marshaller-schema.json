@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/azarc-io/go-edi/refs/heads/feature/add-edi-unmarshal/pkg/schemas/edi-marshaller-schema.json",
+  "self": {
+    "version": "0.0.1",
+    "changeDescriptions": {
+      "0.0.1": "Initial Version"
+    }
+  },
+  "title": "EDI Extended JSON Schema",
+  "description": "An extension schema that adds Marshal EDI fields to properties.",
+  "type": "object",
+  "definitions": {
+    "x-edi": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["segment", "group", "element", "component"],
+          "description": "The type of EDI element."
+        },
+        "order": {
+          "type": "integer",
+          "description": "Defines the order of the EDI element."
+        },
+        "tag": {
+          "type": "string",
+          "description": "The tag associated with the group or segment type."
+        },
+        "ref": {
+          "type": "string",
+          "description": "A reference code for the element or component type."
+        }
+      },
+      "required": ["type", "order"],
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "const": "segment" } } },
+          "then": {
+            "properties": {
+              "tag": { "type": "string" }
+            },
+            "required": ["tag"]
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "element" } } },
+          "then": {
+            "properties": {
+              "ref": { "type": "string" }
+            },
+            "required": ["ref"]
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "component" } } },
+          "then": {
+            "properties": {
+              "ref": { "type": "string" }
+            },
+            "required": ["ref"]
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "beginningOfMessage": {
+    "documentMessageIdentification": {
+      "documentIdentifier": "ACKNOWLEDGEMENT"
+    },
+    "documentMessageName": {
+      "documentNameCode": "23"
+    },
+    "messageFunctionCode": "9"
+  },
+  "dateTimePeriodItems": [
+    {
+      "dateTimePeriod": {
+        "dateOrTimeOrPeriodFormatCode": "102",
+        "dateOrTimeOrPeriodFunctionCodeQualifier": "137",
+        "dateOrTimeOrPeriodText": "20240130"
+      }
+    }
+  ],
+  "grp2": [
+    {
+      "reference": {
+        "reference": {
+          "referenceCodeQualifier": "ON",
+          "referenceIdentifier": "123456"
+        }
+      }
+    }
+  ],
+  "grp3": [
+    {
+      "nameAndAddress": {
+        "partyFunctionCodeQualifier": "FR",
+        "partyIdentificationDetails": {
+          "codeListIdentificationCode": "160",
+          "codeListResponsibleAgencyCode": "ZZZ",
+          "partyIdentifier": "SENDER_COMPANY"
+        }
+      }
+    },
+    {
+      "nameAndAddress": {
+        "partyFunctionCodeQualifier": "TO",
+        "partyIdentificationDetails": {
+          "codeListIdentificationCode": "160",
+          "codeListResponsibleAgencyCode": "ZZZ",
+          "partyIdentifier": "RECEIVER_COMPANY"
+        }
+      }
+    }
+  ],
+  "grp4": [
+    {
+      "applicationErrorInformation": {
+        "applicationErrorDetail": {
+          "applicationErrorCode": "10",
+          "codeListIdentificationCode": "INVALID DATA"
+        }
+      },
+      "freeText": {
+        "textLiteral": {
+          "freeText_1": "The order contains invalid product codes."
+        },
+        "textSubjectCodeQualifier": "AAI"
+      }
+    }
+  ],
+  "interchangeHeader": {
+    "dateAndTimeOfPreparation": {
+      "dateOfPreparation": "230101",
+      "timeOfPreparation": "1234"
+    },
+    "interchangeControlReference": "000000001",
+    "interchangeRecipient": {
+      "recipientIdentification": "RECEIVER_ID"
+    },
+    "interchangeSender": {
+      "senderIdentification": "SENDER_ID"
+    },
+    "syntax": {
+      "syntaxIdentifier": "UNOA",
+      "syntaxTypeVersionNumber": "1"
+    }
+  },
+  "interchangeTrailer": {
+    "interchangeControlCount": 1,
+    "interchangeControlReference": "000000001"
+  },
+  "messageHeader": {
+    "messageIdentifier": {
+      "controllingAgencyCoded": "UN",
+      "messageReleaseNumber": "96A",
+      "messageType": "APERAK",
+      "messageVersionNumber": "D"
+    },
+    "messageReferenceNumber": "00001"
+  },
+  "messageTrailer": {
+    "messageReferenceNumber": "00001",
+    "numberOfSegmentsInAMessage": 9
+  }
+}

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Exit immediately if a command exits with a non-zero status.
+set -e
+
+# Define the repo path
+REPO="github.com/azarc-io/go-edi"
+
+# Fetch the latest tag or use "dev" if no tags are found
+TAG=$(git ls-remote --tags --sort="v:refname" https://$REPO.git | tail -n1 | sed 's/.*\///')
+if [ -z "$TAG" ]; then
+  TAG="dev"
+  echo "No tags found; using default version: $TAG"
+else
+  echo "Found latest tag: $TAG"
+fi
+
+# Install the CLI with the version embedded
+echo "Installing EDI CLI with version $TAG..."
+go install -ldflags="-X main.Version=$TAG" $REPO/cmd/edi@$TAG
+
+# Check if installation was successful
+if command -v edi &> /dev/null; then
+  echo "EDI CLI installed successfully!"
+  edi --version
+else
+  echo "Installation failed."
+fi
