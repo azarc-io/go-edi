@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/azarc-io/go-edi/refs/heads/main/pkg/schemas/edi/edi-schema_cuscar-fri_v1.json",
   "beginningOfMessage": {
     "dateTimePeriod1": {
       "dateOrTimeOrPeriodFormatCode": "201",
@@ -38,6 +39,9 @@
       "processingIndicatorCoded": "T"
     }
   },
+  "goodItemsDetails": {
+    "goodItemsNumber": "0"
+  },
   "interchangeHeader": {
     "dateAndTimeOfPreparation": {
       "dateOfPreparation": "240606",
@@ -63,9 +67,10 @@
     "interchangeControlReference": "AZA006271444"
   },
   "measurements": {
+    "measurementApplicationQualifier": "WT",
     "valueRange": {
       "measurementUnitQualifier": "KGM",
-      "measurementValue": 100
+      "measurementValue": 100.2
     }
   },
   "messageHeader": {
