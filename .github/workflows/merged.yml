@@ -1,0 +1,66 @@
+name: Release on Merge to Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up the Go environment with the specified version
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.20'  # Specify the Go version for the environment
+
+      # Step 3: Install GitHub CLI and jq for processing JSON if not already available
+      - name: Install GitHub CLI
+        run: |
+          sudo apt-get install -y gh jq  # Install GitHub CLI and jq
+
+      # Step 4: Determine the release type based on the branch (main or other)
+      - name: Determine release type
+        id: release_type
+        run: |
+          # Check if the branch is 'main'
+          if [[ "${GITHUB_REF##*/}" == "main" ]]; then
+            echo "default_bump=patch" >> $GITHUB_ENV  # Set default bump to patch for stable releases
+            echo "release_type=stable" >> $GITHUB_ENV  # Set release type to stable
+            echo "pre_release=false" >> $GITHUB_ENV  # No pre-release for main branch
+            echo "prerelease_suffix=" >> $GITHUB_ENV  # No suffix for stable releases
+          else
+            echo "default_bump=skip" >> $GITHUB_ENV  # Skip version bump for non-main branches
+            echo "release_type=beta" >> $GITHUB_ENV  # Set release type to beta
+            echo "pre_release=true" >> $GITHUB_ENV  # Mark as pre-release
+            echo "prerelease_suffix=beta" >> $GITHUB_ENV  # Set suffix for pre-release versions
+          fi
+
+      # Step 5: Increment version and create a new Git tag based on the release type
+      - name: Increment and create tag
+        id: create_tag
+        uses: anothrNick/github-tag-action@1.67.0
+        env:
+          DEFAULT_BUMP: ${{ env.default_bump }}  # Use the bump type determined earlier
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
+          PRERELEASE_SUFFIX: ${{ env.prerelease_suffix }}  # Suffix for pre-releases
+          WITH_V: true  # Include 'v' prefix in the tag
+          PRERELEASE: ${{ env.pre_release }}  # Mark as pre-release if applicable
+          VERBOSE: true  # Enable verbose output for debugging
+
+      # Step 6: Create a new GitHub release with the newly created tag
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.create_tag.outputs.new_tag }}  # Use the new tag created in the previous step
+          name: "Release ${{ steps.create_tag.outputs.new_tag }}"  # Name of the release
+          body: "Automated release for version ${{ steps.create_tag.outputs.new_tag }}"  # Description of the release
+          prerelease: ${{ env.pre_release }}  # Mark as a pre-release if applicable
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication

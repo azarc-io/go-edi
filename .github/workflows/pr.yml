@@ -1,0 +1,83 @@
+name: Go Tests and Code Coverage
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code from the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up the Go environment with the specified version
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.23  # Specify the Go version for the environment
+
+      # Step 3: Install project dependencies and tidy up the go.mod file
+      - name: Install Dependencies
+        run: go mod tidy
+
+      # Step 4: Run tests with code coverage and create a coverage profile
+      - name: Run Tests with Coverage
+        run: |
+          mkdir -p coverage  # Create the coverage directory
+          go test ./... -coverprofile=coverage/coverage.out -v  # Run tests and generate coverage profile
+
+      # Step 5: Generate the HTML report for code coverage from the coverage profile
+      - name: Generate HTML Coverage Report
+        run: |
+          go tool cover -html=coverage/coverage.out -o coverage/coverage.html
+
+      # Step 6: Upload the HTML coverage report as an artifact for later inspection
+      - name: Upload Coverage Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report  # Name the artifact "coverage-report"
+          path: coverage/coverage.html  # Specify the path to the report
+
+      # Step 7: Determine the release type based on the branch (main or other)
+      - name: Determine release type
+        id: release_type
+        run: |
+          # Check if the branch is 'main'
+          if [[ "${GITHUB_REF##*/}" == "main" ]]; then
+            echo "default_bump=patch" >> $GITHUB_ENV  # Set bump type to patch for stable releases
+            echo "release_type=stable" >> $GITHUB_ENV  # Set release type to stable
+            echo "pre_release=false" >> $GITHUB_ENV  # No pre-release for main
+            echo "prerelease_suffix=" >> $GITHUB_ENV  # No suffix for stable releases
+          else
+            echo "default_bump=skip" >> $GITHUB_ENV  # Skip version bump for non-main branches
+            echo "release_type=beta" >> $GITHUB_ENV  # Set release type to beta
+            echo "pre_release=true" >> $GITHUB_ENV  # Mark as pre-release
+            echo "prerelease_suffix=beta" >> $GITHUB_ENV  # Set suffix for pre-release versions
+          fi
+
+      # Step 8: Increment and create a new version tag based on the release type
+      - name: Increment and create tag
+        id: create_tag
+        uses: anothrNick/github-tag-action@1.67.0
+        env:
+          DEFAULT_BUMP: ${{ env.default_bump }}  # Use the bump type set in the previous step
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
+          PRERELEASE_SUFFIX: ${{ env.prerelease_suffix }}  # Suffix for pre-releases
+          WITH_V: true  # Include 'v' prefix in the tag
+          PRERELEASE: ${{ env.pre_release }}  # Mark as pre-release if applicable
+          VERBOSE: true  # Enable verbose output for debugging
+
+      # Step 9: Create a GitHub release based on the new tag
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.create_tag.outputs.new_tag }}  # Use the new tag created in the previous step
+          name: "Release ${{ steps.create_tag.outputs.new_tag }}"  # Name of the release
+          body: "Automated release for version ${{ steps.create_tag.outputs.new_tag }}"  # Description of the release
+          prerelease: ${{ env.pre_release }}  # Mark as a pre-release if applicable
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
