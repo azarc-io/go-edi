@@ -18,6 +18,9 @@
   "detailsOfTransport": {
     "transportStageQualifier": "20"
   },
+  "goodItemsDetails": {
+    "goodItemsNumber": "0"
+  },
   "interchangeHeader": {
     "dateAndTimeOfPreparation": {
       "dateOfPreparation": "240606",
@@ -37,6 +40,10 @@
       "syntaxTypeVersionNumber": "2"
     }
   },
+  "interchangeTrailer": {
+    "interchangeControlCount": 1,
+    "interchangeControlReference": "1236439"
+  },
   "messageHeader": {
     "commonAccessReference": "1236439",
     "messageIdentifier": {
@@ -48,6 +55,10 @@
     },
     "messageReferenceNumber": "1236439"
   },
+  "messageTrailer": {
+    "messageReferenceNumber": "1236439",
+    "numberOfSegmentsInAMessage": 7
+  },
   "placeIdentification": {
     "locationIdentificationDischargePort": {
       "codeListQualifier": "129",
@@ -57,6 +68,12 @@
       "placeLocationIdentification": "LHR",
       "placeLocationQualifier": "11",
       "subLocationIdentification": "AAA"
+    }
+  },
+  "quantityManifested": {
+    "quantityDetails": {
+      "quantity": 5,
+      "quantityQualifier": "48"
     }
   }
 }

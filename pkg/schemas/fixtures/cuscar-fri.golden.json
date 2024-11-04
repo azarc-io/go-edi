@@ -38,6 +38,9 @@
       "processingIndicatorCoded": "T"
     }
   },
+  "goodItemsDetails": {
+    "goodItemsNumber": "0"
+  },
   "interchangeHeader": {
     "dateAndTimeOfPreparation": {
       "dateOfPreparation": "240606",
@@ -63,9 +66,10 @@
     "interchangeControlReference": "AZA006271444"
   },
   "measurements": {
+    "measurementApplicationQualifier": "WT",
     "valueRange": {
       "measurementUnitQualifier": "KGM",
-      "measurementValue": 100
+      "measurementValue": 100.2
     }
   },
   "messageHeader": {

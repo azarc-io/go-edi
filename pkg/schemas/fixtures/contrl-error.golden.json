@@ -4,6 +4,7 @@
       "dateOfPreparation": "210720",
       "timeOfPreparation": "0912"
     },
+    "interchangeAgreementIdentifier": "A",
     "interchangeControlReference": "102C9091221000",
     "interchangeRecipient": {
       "addressForReverseRouting": "BCTCIFZ",
@@ -20,13 +21,17 @@
     }
   },
   "interchangeResponse": {
-    "actionCoded": "4",
-    "interchangeControlReference": "DTICHIEFEDI",
+    "interchangeControlReference": {
+      "controlReference": "CHIEF"
+    },
     "interchangeRecipient": {
-      "interchangeRecipientIdentification": "CHIEF"
+      "interchangeRecipientIdentification": "CUK98000MET"
     },
     "interchangeSender": {
-      "interchangeSenderIdentification": "CUK98000MET"
+      "interchangeSenderIdentification": "DTICHIEFEDI"
+    },
+    "responseTypeAndStatus": {
+      "responseTypeCoded": "4"
     }
   },
   "interchangeTrailer": {

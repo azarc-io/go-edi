@@ -1202,13 +1202,212 @@
         }
       }
     },
+    "goodItemsDetails": {
+      "type": "object",
+      "title": "Good Items Details",
+      "description": "A segment to indicate the details of the good items in the shipment.",
+      "x-edi": {
+        "type": "segment",
+        "order": 10,
+        "tag": "GID"
+      },
+      "properties": {
+        "goodItemsNumber": {
+          "description": "Good Items Number: '0'",
+          "maxLength": 5,
+          "propertyName": "goodItemsNumber",
+          "title": "Good Items Number",
+          "type": "string",
+          "x-edi": {
+            "type": "element",
+            "order": 1,
+            "ref": "1496"
+          }
+        }
+      }
+    },
+    "freeTextItems": {
+      "type": "array",
+      "title": "Free Text Items",
+      "description": "Items:  A segment to specify free form or processable supplementary information related to the whole message. In computer-to- computer exchanges free form text will normally require the receiver to process this segment manually.",
+      "x-edi": {
+        "order": 11
+      },
+      "minItems": 0,
+      "maxItems": 9,
+      "items": {
+        "type": "object",
+        "x-edi": {
+          "type": "segment",
+          "order": 10,
+          "tag": "FTX"
+        },
+        "properties": {
+          "textSubjectCodeQualifier": {
+            "description": "Code qualifying the subject of the text: 'AAA' Description of Goods.",
+            "maxLength": 3,
+            "propertyName": "textSubjectCodeQualifier",
+            "title": "Text Subject Code Qualifier",
+            "type": "string",
+            "x-edi": {
+              "type": "element",
+              "order": 1,
+              "ref": "4451"
+            }
+          },
+          "freeTextFunctionCode": {
+            "description": "Code specifying the function of free text. Ommited.",
+            "maxLength": 3,
+            "propertyName": "freeTextFunctionCode",
+            "title": "Free Text Function Code",
+            "type": "string",
+            "x-edi": {
+              "type": "element",
+              "order": 2,
+              "ref": "4453"
+            }
+          },
+          "textReference": {
+            "type": "object",
+            "title": "Text Reference",
+            "description": "Coded reference to a standard text and its source. Ommited.",
+            "x-edi": {
+              "type": "component",
+              "order": 3,
+              "ref": "C107"
+            },
+            "properties": {}
+          },
+          "textLiteral": {
+            "type": "object",
+            "title": "Text Literal",
+            "description": "Free text.",
+            "x-edi": {
+              "type": "component",
+              "order": 4,
+              "ref": "C108"
+            },
+            "properties": {
+              "freeText": {
+                "description": "Free form text: Manifest Description of Goods.",
+                "maxLength": 70,
+                "propertyName": "freeText",
+                "title": "Free text",
+                "type": "string",
+                "x-edi": {
+                  "type": "element",
+                  "order": 1,
+                  "ref": "4440"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "quantityManifested": {
+      "type": "object",
+      "title": "Quantity Manifested",
+      "description": "A segment to indicate the quantity manifested.",
+      "x-edi": {
+        "type": "segment",
+        "order": 12,
+        "tag": "QTY"
+      },
+      "properties": {
+        "quantityDetails": {
+          "type": "object",
+          "title": "Quantity Details",
+          "description": "Quantity Details",
+          "x-edi": {
+            "type": "component",
+            "order": 1,
+            "ref": "C186"
+          },
+          "properties": {
+            "quantityQualifier": {
+              "description": "Quantity qualifier: '118' Quantity manifested.",
+              "maxLength": 3,
+              "propertyName": "quantityQualifier",
+              "title": "Quantity Manifested",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "6063"
+              }
+            },
+            "quantity": {
+              "description": "Quantity: NPX",
+              "max": 999999999999999,
+              "propertyName": "quantity",
+              "title": "Quantity",
+              "type": "number",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "6060"
+              }
+            }
+          }
+        }
+      }
+    },
+    "quantityReceived": {
+      "type": "object",
+      "title": "Quantity Received",
+      "description": "A segment to indicate the quantity received.",
+      "x-edi": {
+        "type": "segment",
+        "order": 13,
+        "tag": "QTY"
+      },
+      "properties": {
+        "quantityDetails": {
+          "type": "object",
+          "title": "Quantity Details",
+          "description": "Quantity Details",
+          "x-edi": {
+            "type": "component",
+            "order": 1,
+            "ref": "C186"
+          },
+          "properties": {
+            "quantityQualifier": {
+              "description": "Quantity qualifier: '48' Quantity received.",
+              "maxLength": 3,
+              "propertyName": "quantityQualifier",
+              "title": "Quantity Received",
+              "type": "string",
+              "x-edi": {
+                "type": "element",
+                "order": 1,
+                "ref": "6063"
+              }
+            },
+            "quantity": {
+              "description": "Quantity: NPR",
+              "max": 999999999999999,
+              "propertyName": "quantity",
+              "title": "Quantity",
+              "type": "number",
+              "x-edi": {
+                "type": "element",
+                "order": 2,
+                "ref": "6060"
+              }
+            }
+          }
+        }
+      }
+    },
     "measurements": {
       "type": "object",
       "title": "Measurements",
       "description": "A segment to indicate the processing indicator.",
       "x-edi": {
         "type": "segment",
-        "order": 10,
+        "order": 14,
         "tag": "MEA"
       },
       "properties": {
@@ -1279,7 +1478,7 @@
       "description": " A segment to indicate the reference number of the document/message.",
       "x-edi": {
         "type": "segment",
-        "order": 11,
+        "order": 15,
         "tag": "RFF"
       },
       "properties": {
@@ -1327,7 +1526,7 @@
       "description": " A service segment ending a message, giving the total number of segments in the message (including the UNH & UNT) and the control reference number of the message.",
       "x-edi": {
         "type": "segment",
-        "order": 12,
+        "order": 16,
         "tag": "UNT"
       },
       "properties": {
@@ -1363,7 +1562,7 @@
       "description": "Close of the Interchange message.",
       "x-edi": {
         "type": "segment",
-        "order": 13,
+        "order": 17,
         "tag": "UNZ"
       },
       "properties": {

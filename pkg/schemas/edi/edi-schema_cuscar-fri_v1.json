@@ -1207,7 +1207,7 @@
           "title": "Good Items Number",
           "type": "string",
           "x-edi": {
-            "type": "component",
+            "type": "element",
             "order": 1,
             "ref": "1496"
           }
@@ -1406,7 +1406,7 @@
           "title": "Measurement Application Qualifier",
           "type": "string",
           "x-edi": {
-            "type": "component",
+            "type": "element",
             "order": 1,
             "ref": "6311"
           }
@@ -1416,7 +1416,7 @@
           "title": "Measurement Details",
           "description": "Measurement Details. Ommited.",
           "x-edi": {
-            "type": "component",
+            "type": "element",
             "order": 2,
             "ref": "C502"
           },

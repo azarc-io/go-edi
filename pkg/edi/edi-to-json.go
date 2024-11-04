@@ -5,11 +5,9 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"io"
-	"slices"
-
 	edi_reader "github.com/azarc-io/go-edi/internal/edi-reader"
 	"github.com/azarc-io/go-edi/internal/model"
+	"io"
 )
 
 const (
@@ -27,8 +25,8 @@ func Unmarshal(schema *model.Schema, input []byte, out any) error {
 	reader := edi_reader.NewEDIReader(input)
 	var buffer bytes.Buffer
 
-	if schema.Type == "" {
-		schema.Type = "object"
+	if schema.Type == model.JsonSchemaTypeUnknown {
+		schema.Type = model.JsonSchemaTypeObject
 	}
 
 	if _, err := processProperty(schema.Property, reader, &buffer); err != nil {
@@ -44,7 +42,7 @@ func Unmarshal(schema *model.Schema, input []byte, out any) error {
 
 func processProperty(p *model.Property, reader *edi_reader.EDIReader, out io.Writer) (bool, error) {
 	switch p.Type {
-	case "array":
+	case model.JsonSchemaTypeArray:
 		if p.Items == nil {
 			return false, ErrArrayRequiresItem
 		}
@@ -76,7 +74,7 @@ func processProperty(p *model.Property, reader *edi_reader.EDIReader, out io.Wri
 		}
 		_, _ = out.Write([]byte("]"))
 		return count > 0, nil
-	case "object":
+	case model.JsonSchemaTypeObject:
 		switch p.XEdi.Type {
 		case model.EdiTypeSegment:
 			return processSegment(p, reader, out)
@@ -222,34 +220,11 @@ func addComponent(property *model.Property, comp *edi_reader.Component, out io.W
 
 func addElement(element *model.Property, value string, out io.Writer) error {
 	switch element.Type {
-	case "string":
+	case model.JsonSchemaTypeString:
 		d, _ := json.Marshal(value)
-		out.Write(d)
+		_, _ = out.Write(d)
 	default:
-		out.Write([]byte(value))
+		_, _ = out.Write([]byte(value))
 	}
 	return nil
-}
-
-type orderedEdiItem struct {
-	Name     string
-	Property *model.Property
-}
-
-func getOrderedEdi(input model.Properties) []orderedEdiItem {
-	var items []orderedEdiItem
-	for k, s := range input {
-		items = append(items, orderedEdiItem{
-			Name:     k,
-			Property: s,
-		})
-	}
-	slices.SortFunc(items, func(e1 orderedEdiItem, e2 orderedEdiItem) int {
-		if e1.Property.XEdi.Order > e2.Property.XEdi.Order {
-			return 1
-		} else {
-			return -1
-		}
-	})
-	return items
 }
