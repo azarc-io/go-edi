@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="46381412-0a56-4c5b-b6bf-8992225715b7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/merged.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/merged.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/pr.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/pr.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file://$USER_HOME$/go/go1.23.2" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2oHgGufwXT4ZpVvqhUfvg76PXNh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "Go Test.TestMarshal in github.com/azarc-io/go-edi/pkg/edi.executor": "Run",
+    "Go Test.TestMarshal/Array:_Array_with_max_items_and_two_objects_properties in github.com/azarc-io/go-edi/pkg/edi.executor": "Run",
+    "Go Test.TestMarshal/Array:_Object_with_Object_and_Array_properties in github.com/azarc-io/go-edi/pkg/edi.executor": "Run",
+    "Go Test.TestMarshal/Complex:_Nested_Objects in github.com/azarc-io/go-edi/pkg/edi.executor": "Run",
+    "Go Test.TestMarshal/One_Item in github.com/azarc-io/go-edi/pkg/edi.executor": "Debug",
+    "Go Test.TestMarshal/Two_Items in github.com/azarc-io/go-edi/pkg/edi.executor": "Run",
+    "Go Test.TestMarshal/as_struct in github.com/azarc-io/go-edi/pkg/edi.executor": "Run",
+    "Go Test.TestMarshal/escape_characters in github.com/azarc-io/go-edi/pkg/edi.executor": "Run",
+    "Go Test.TestMarshal/invalid_type in github.com/azarc-io/go-edi/pkg/edi.executor": "Debug",
+    "Go Test.TestMarshal/separators in github.com/azarc-io/go-edi/pkg/edi.executor": "Run",
+    "Go Test.TestMarshal/to_edi in github.com/azarc-io/go-edi/pkg/edi.executor": "Debug",
+    "Go Test.TestSchemas in github.com/azarc-io/go-edi/pkg/schemas.executor": "Run",
+    "Go Test.TestSchemas/Marshal:_aperak in github.com/azarc-io/go-edi/pkg/schemas.executor": "Run",
+    "Go Test.TestSchemas/Marshal:_contrl in github.com/azarc-io/go-edi/pkg/schemas.executor": "Debug",
+    "Go Test.TestSchemas/Marshal:_contrl-error in github.com/azarc-io/go-edi/pkg/schemas.executor": "Run",
+    "Go Test.TestSchemas/Marshal:_cuscar-frc in github.com/azarc-io/go-edi/pkg/schemas.executor": "Run",
+    "Go Test.TestSchemas/Marshal:_cuscar-fri in github.com/azarc-io/go-edi/pkg/schemas.executor": "Run",
+    "Go Test.TestSchemas/Unmarshal:_contrl in github.com/azarc-io/go-edi/pkg/schemas (1).executor": "Debug",
+    "Go Test.TestSchemas/Unmarshal:_contrl in github.com/azarc-io/go-edi/pkg/schemas.executor": "Debug",
+    "Go Test.TestSchemas/broken_schema in github.com/azarc-io/go-edi/pkg/schemas.executor": "Coverage",
+    "Go Test.edi-to-json_test.go.executor": "Run",
+    "Go Test.go test edi-reader.executor": "Run",
+    "Go Test.go test go-edi.executor": "Run",
+    "Go Test.go test schemas.executor": "Coverage",
+    "Go Test.json-to-edi_test.go.executor": "Run",
+    "Go Test.schema_test.go.executor": "Coverage",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "feature/add-edi-marshal",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/Users/jlangley",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/internal/model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Test.go test go-edi">
+    <configuration name="TestMarshal/as_struct in github.com/azarc-io/go-edi/pkg/edi" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-edi" />
+      <working_directory value="$PROJECT_DIR$/pkg/edi" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/azarc-io/go-edi/pkg/edi" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestMarshal\E$/^\Qas_struct\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestSchemas/broken_schema in github.com/azarc-io/go-edi/pkg/schemas" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-edi" />
+      <working_directory value="$PROJECT_DIR$/pkg/schemas" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/azarc-io/go-edi/pkg/schemas" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestSchemas\E$/^\Qbroken_schema\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go test go-edi" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-edi" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <package value="github.com/azarc-io/go-edi" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go test schemas" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-edi" />
+      <working_directory value="$PROJECT_DIR$/pkg/schemas" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <package value="github.com/azarc-io/go-edi/pkg/schemas" />
+      <directory value="$PROJECT_DIR$/pkg/schemas" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <configuration name="schema_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-edi" />
+      <working_directory value="$PROJECT_DIR$/pkg/schemas" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/pkg/schemas/schema_test.go" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Go Test.TestMarshal/as_struct in github.com/azarc-io/go-edi/pkg/edi" />
+      <item itemvalue="Go Test.TestSchemas/broken_schema in github.com/azarc-io/go-edi/pkg/schemas" />
+      <item itemvalue="Go Test.go test go-edi" />
+      <item itemvalue="Go Test.go test schemas" />
+      <item itemvalue="Go Test.schema_test.go" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.go test go-edi" />
+        <item itemvalue="Go Test.TestSchemas/broken_schema in github.com/azarc-io/go-edi/pkg/schemas" />
+        <item itemvalue="Go Test.schema_test.go" />
+        <item itemvalue="Go Test.go test schemas" />
+        <item itemvalue="Go Test.TestMarshal/as_struct in github.com/azarc-io/go-edi/pkg/edi" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-gosdk-5df93f7ad4aa-df9ad98b711f-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-242.23339.24" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-GO-242.23339.24" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/go_edi$go_test_go_edi.out" NAME="go test go-edi Coverage Results" MODIFIED="1730719193977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/go_edi$go_test_schemas.out" NAME="go test schemas Coverage Results" MODIFIED="1730718968200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/go_edi$TestSchemas_broken_schema_in_github_com_azarc_io_go_edi_pkg_schemas.out" NAME="TestSchemas/broken_schema in github.com/azarc-io/go-edi/pkg/schemas Coverage Results" MODIFIED="1730719023794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/go_edi$schema_test_go.out" NAME="schema_test.go Coverage Results" MODIFIED="1730718985419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

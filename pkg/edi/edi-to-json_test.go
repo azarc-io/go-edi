@@ -21,7 +21,7 @@ var sample2 []byte
 //go:embed fixtures/sample-3-complex.schema.json
 var sample3 []byte
 
-func TestEdiToJson(t *testing.T) {
+func TestUnmarshal(t *testing.T) {
 	tests := []struct {
 		Name     string
 		Schema   []byte

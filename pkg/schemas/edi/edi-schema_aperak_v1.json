@@ -1,5 +1,6 @@
 {
-  "$schema": "https://raw.githubusercontent.com/azarc-io/go-edi/refs/heads/feature/add-edi-unmarshal/pkg/schemas/edi-marshaller-schema.json",
+  "$schema": "https://raw.githubusercontent.com/azarc-io/go-edi/refs/heads/main/pkg/schemas/edi-marshaller-schema.json",
+  "$id": "https://raw.githubusercontent.com/azarc-io/go-edi/refs/heads/main/pkg/schemas/edi/edi-schema_aperak_v1.json",
   "type": "object",
   "title": "aperak-full",
   "properties": {
