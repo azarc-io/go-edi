@@ -6,11 +6,29 @@ set -e
 # Define the repo path
 REPO="github.com/azarc-io/go-edi"
 
-# Fetch the latest tag or use "dev" if no tags are found
-TAG=$(git ls-remote --tags --sort="v:refname" https://$REPO.git | tail -n1 | sed 's/.*\///')
+# Check if the --include-rc flag is passed
+INCLUDE_RC=false
+for arg in "$@"; do
+  if [ "$arg" == "--include-rc" ]; then
+    INCLUDE_RC=true
+  fi
+done
+
+# Fetch the latest tag, optionally including release candidates if the flag is set
+if [ "$INCLUDE_RC" == "true" ]; then
+  echo "Using latest RC if available"
+  # Include release candidates (tags with -beta, -rc, etc.)
+  TAG=$(git ls-remote --tags --sort="v:refname" https://$REPO.git | tail -n1 | sed 's/.*\///')
+else
+  echo "Using latest Stable"
+  # Only include stable releases (no -rc, -beta, etc.)
+  TAG=$(git ls-remote --tags --sort="v:refname" https://$REPO.git | \
+      grep -E '/v[0-9]+\.[0-9]+\.[0-9]+$' | tail -n1 | sed 's/.*\///')
+fi
+
 if [ -z "$TAG" ]; then
   TAG="dev"
-  echo "No tags found; using default version: $TAG"
+  echo "No suitable tags found; using default version: $TAG"
 else
   echo "Found latest tag: $TAG"
 fi

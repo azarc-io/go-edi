@@ -1,9 +1,11 @@
 {
+  "$schema": "https://raw.githubusercontent.com/azarc-io/go-edi/refs/heads/main/pkg/schemas/edi/edi-schema_contrl_v1.json",
   "interchangeHeader": {
     "dateAndTimeOfPreparation": {
       "dateOfPreparation": "210624",
       "timeOfPreparation": "0844"
     },
+    "interchangeAgreementIdentifier": "A",
     "interchangeControlReference": "00248084414002",
     "interchangeRecipient": {
       "addressForReverseRouting": "VTH1621978080",
@@ -20,14 +22,19 @@
     }
   },
   "interchangeResponse": {
-    "actionCoded": "1",
-    "interchangeControlReference": "CUKFFW98000MET",
+    "interchangeControlReference": {
+      "controlReference": "VTH1621978080"
+    },
     "interchangeRecipient": {
-      "interchangeRecipientIdentification": "VTH1621978080"
+      "identificationCodeQualifier": "IATA",
+      "interchangeRecipientIdentification": "CUKCTM98CHFIMP"
     },
     "interchangeSender": {
       "identificationCodeQualifier": "IATA",
-      "interchangeSenderIdentification": "CUKCTM98CHFIMP"
+      "interchangeSenderIdentification": "CUKFFW98000MET"
+    },
+    "responseTypeAndStatus": {
+      "responseTypeCoded": "1"
     }
   },
   "interchangeTrailer": {

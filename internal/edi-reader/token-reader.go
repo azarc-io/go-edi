@@ -6,8 +6,8 @@ import (
 
 type ediTokenReader struct {
 	data      []byte
-	separator rune
-	escape    rune
+	separator string
+	escape    string
 	cursor    int
 }
 
@@ -28,7 +28,7 @@ func (tr *ediTokenReader) PeekNext() ([]byte, int) {
 	}
 
 	for {
-		end = bytes.IndexRune(tr.data[start:], tr.separator)
+		end = bytes.IndexAny(tr.data[start:], tr.separator)
 		if end == -1 {
 			// end of dataset
 			end = len(tr.data)
@@ -36,7 +36,7 @@ func (tr *ediTokenReader) PeekNext() ([]byte, int) {
 		}
 
 		nextCursor := end + start
-		if nextCursor > 0 && rune(tr.data[nextCursor-1]) == tr.escape {
+		if nextCursor > 0 && string(tr.data[nextCursor-1]) == tr.escape {
 			// this is an escape char, continue
 			// remove escape character before moving on
 			tr.data = removeByteAtPosition(tr.data, nextCursor-1)
@@ -60,7 +60,7 @@ func removeByteAtPosition(data []byte, k int) []byte {
 	return append(data[:k], data[k+1:]...)
 }
 
-func NewEdiTokenReader(data []byte, separator, escape rune) *ediTokenReader {
+func NewEdiTokenReader(data []byte, separator, escape string) *ediTokenReader {
 	return &ediTokenReader{
 		data:      data,
 		separator: separator,
