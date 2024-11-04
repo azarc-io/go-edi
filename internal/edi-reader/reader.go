@@ -3,53 +3,47 @@ package edi_reader
 import (
 	"bytes"
 	"fmt"
-)
-
-const (
-	SeparatorSegmentDefault   = '\''
-	SeparatorComponentDefault = '+'
-	SeparatorElementDefault   = ':'
-	EscapeCharacterDefault    = '?'
+	"github.com/azarc-io/go-edi/internal/model"
 )
 
 type EDIReader struct {
 	reader             *ediTokenReader
-	segmentSeparator   rune
-	componentSeparator rune
-	elementSeparator   rune
-	escapeCharacter    rune
+	segmentSeparator   string
+	componentSeparator string
+	elementSeparator   string
+	escapeCharacter    string
 }
 
-type option func(*EDIReader)
+type Option func(*EDIReader)
 
-func WithSegmentSeparator(s rune) option {
+func WithSegmentSeparator(s string) Option {
 	return func(reader *EDIReader) {
 		reader.segmentSeparator = s
 	}
 }
-func WithComponentSeparator(s rune) option {
+func WithComponentSeparator(s string) Option {
 	return func(reader *EDIReader) {
 		reader.componentSeparator = s
 	}
 }
-func WithElementSeparator(s rune) option {
+func WithElementSeparator(s string) Option {
 	return func(reader *EDIReader) {
 		reader.elementSeparator = s
 	}
 }
-func WithEscapeChar(s rune) option {
+func WithEscapeChar(s string) Option {
 	return func(reader *EDIReader) {
 		reader.escapeCharacter = s
 	}
 }
 
 // NewEDIReader initializes the EDIReader with EDI input data
-func NewEDIReader(data []byte, opts ...option) *EDIReader {
+func NewEDIReader(data []byte, opts ...Option) *EDIReader {
 	er := &EDIReader{
-		segmentSeparator:   SeparatorSegmentDefault,
-		componentSeparator: SeparatorComponentDefault,
-		elementSeparator:   SeparatorElementDefault,
-		escapeCharacter:    EscapeCharacterDefault,
+		segmentSeparator:   model.DefaultSeparatorSegment,
+		componentSeparator: model.DefaultSeparatorComponent,
+		elementSeparator:   model.DefaultSeparatorElement,
+		escapeCharacter:    model.DefaultEscapeCharacter,
 	}
 
 	for _, opt := range opts {
@@ -68,7 +62,7 @@ func (r *EDIReader) ReadSegment() (*Segment, error) {
 	}
 
 	// Split Segment data into parts and create Segment
-	parts := bytes.SplitN(data, []byte{byte(r.componentSeparator)}, 2)
+	parts := bytes.SplitN(data, []byte(r.componentSeparator), 2)
 	if len(parts) < 1 {
 		return nil, fmt.Errorf("invalid Segment format")
 	}
@@ -84,7 +78,7 @@ func (r *EDIReader) PeekSegment() (string, error) {
 	}
 
 	// Split Segment data into parts and create Segment
-	parts := bytes.SplitN(data, []byte{byte(r.componentSeparator)}, 2)
+	parts := bytes.SplitN(data, []byte(r.componentSeparator), 2)
 	if len(parts) < 1 {
 		return "", fmt.Errorf("invalid Segment format")
 	}
