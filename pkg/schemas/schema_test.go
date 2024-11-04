@@ -2,7 +2,9 @@ package schemas_test
 
 import (
 	"embed"
+	"encoding/json"
 	"fmt"
+	"github.com/stretchr/testify/assert"
 	"testing"
 
 	edi "github.com/azarc-io/go-edi/pkg/edi"
@@ -27,7 +29,7 @@ func TestSchemas(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		t.Run(test.Name, func(t *testing.T) {
+		t.Run(fmt.Sprintf("Marshal: %s", test.Name), func(t *testing.T) {
 			g := goldie.New(
 				t,
 				goldie.WithFixtureDir("fixtures"),
@@ -38,10 +40,33 @@ func TestSchemas(t *testing.T) {
 			s, err := schemas.LoadSchema(test.Schema)
 			require.NoError(t, err)
 			m := make(map[string]any)
-			require.NoError(t, err)
 			err = edi.Unmarshal(s, input, &m)
 			require.NoError(t, err)
 			g.AssertJson(t, test.Name, m)
 		})
+
+		t.Run(fmt.Sprintf("Unmarshal: %s", test.Name), func(t *testing.T) {
+			g := goldie.New(
+				t,
+				goldie.WithFixtureDir("fixtures"),
+				goldie.WithNameSuffix(".golden.edi"),
+			)
+			input, err := ff.ReadFile(fmt.Sprintf("fixtures/%s.golden.json", test.Name))
+			require.NoError(t, err)
+			s, err := schemas.LoadSchema(test.Schema)
+			require.NoError(t, err)
+
+			m := make(map[string]any)
+			require.NoError(t, json.Unmarshal(input, &m))
+			data, err := edi.Marshal(s, &m, edi.WithSegmentSeparator("'\n"))
+			require.NoError(t, err)
+			g.Assert(t, test.Name, data)
+		})
 	}
+
+	t.Run("broken schema", func(t *testing.T) {
+		s, err := schemas.LoadSchema([]byte(`{"broken": ...}`))
+		assert.Nil(t, s)
+		assert.Error(t, err)
+	})
 }

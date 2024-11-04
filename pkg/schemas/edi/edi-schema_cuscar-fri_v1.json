@@ -1,4 +1,6 @@
 {
+  "$schema": "https://raw.githubusercontent.com/azarc-io/go-edi/refs/heads/main/pkg/schemas/edi-marshaller-schema.json",
+  "$id": "https://raw.githubusercontent.com/azarc-io/go-edi/refs/heads/main/pkg/schemas/edi/edi-schema_cuscar-fri_v1.json",
   "type": "object",
   "title": "FRI",
   "properties": {
@@ -1207,7 +1209,7 @@
           "title": "Good Items Number",
           "type": "string",
           "x-edi": {
-            "type": "component",
+            "type": "element",
             "order": 1,
             "ref": "1496"
           }
@@ -1406,7 +1408,7 @@
           "title": "Measurement Application Qualifier",
           "type": "string",
           "x-edi": {
-            "type": "component",
+            "type": "element",
             "order": 1,
             "ref": "6311"
           }
@@ -1416,7 +1418,7 @@
           "title": "Measurement Details",
           "description": "Measurement Details. Ommited.",
           "x-edi": {
-            "type": "component",
+            "type": "element",
             "order": 2,
             "ref": "C502"
           },

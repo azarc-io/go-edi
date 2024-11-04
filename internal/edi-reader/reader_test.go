@@ -48,10 +48,10 @@ func TestEdiReader(t *testing.T) {
 	t.Run("With Opts", func(t *testing.T) {
 		ediData := []byte("someCgoCthereEwithXEstuffS")
 		ediReader := edi_reader.NewEDIReader(ediData,
-			edi_reader.WithSegmentSeparator('S'),
-			edi_reader.WithComponentSeparator('C'),
-			edi_reader.WithElementSeparator('E'),
-			edi_reader.WithEscapeChar('X'),
+			edi_reader.WithSegmentSeparator("S"),
+			edi_reader.WithComponentSeparator("C"),
+			edi_reader.WithElementSeparator("E"),
+			edi_reader.WithEscapeChar("X"),
 		)
 
 		segment1, err := ediReader.ReadSegment()
