@@ -1,0 +1,43 @@
+name: Go Tests and Code Coverage
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Go environment
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.23
+
+      # Step 3: Install dependencies
+      - name: Install Dependencies
+        run: go mod tidy
+
+      # Step 4: Run tests with code coverage
+      - name: Run Tests with Coverage
+        run: |
+          mkdir -p coverage
+          go test ./... -coverprofile=coverage/coverage.out -v
+
+      # Step 5: Generate code coverage report in HTML format
+      - name: Generate HTML Coverage Report
+        run: |
+          go tool cover -html=coverage/coverage.out -o coverage/coverage.html
+
+      # Step 6: Upload coverage report artifact
+      - name: Upload Coverage Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: coverage/coverage.html
