@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/azarc-io/go-edi/refs/heads/main/pkg/schemas/edi/edi-schema_aperak_v1.json",
   "beginningOfMessage": {
     "documentMessageIdentification": {
       "documentIdentifier": "ACKNOWLEDGEMENT"
